@@ -1,63 +1,59 @@
-.header{
-width: 100%;
+.header {
+  width: 100%;
 }
-.header_row{
-padding: 15px 10px;
-width: 100%;
-
+.header_row {
+  padding: 40px 30px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.header_wrapper{
-  max-width: 1200px;
+.header_wrapper {
+  max-width: 1400px;
   margin: auto;
 }
-.navigate{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    li{
-            font-size: 18px;
-            color: #e1e1e1;
-        a{
-            text-decoration: none;
-            color: black;
-        
-         
-            color: #e1e1e1;
-            font-family: inherit;
-            font-weight: 800;
-            cursor: pointer;
-            position: relative;
-            border: none;
-            background: none;
-            text-transform: uppercase;
-            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-            transition-duration: 400ms;
-            transition-property: color;
-          }
-          
-          a:focus,
-          a:hover {
-            color: #fff;
-          }
-          
-          a:focus:after,
-          a:hover:after {
-            width: 100%;
-            left: 0%;
-          }
-          
-          a:after {
-            content: "";
-            pointer-events: none;
-            bottom: -2px;
-            left: 50%;
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            background-color: #fff;
-            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-            transition-duration: 400ms;
-            transition-property: width, left;
-          }
+.navigate {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  li {
+
+    font-size: 18px;
+    .telephone {
+      margin-left: 50px;
+      position: relative;
+      &::before {
+        content: "";
+        background-image: url(../../image/icons/Phone.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        top: 0;
+        left: -35px;
+      }
     }
+    .street {
+      margin-left: 50px;
+      position: relative;
+      &::before {
+        content: "";
+        background-image: url(../../image/icons/Location.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        top: 0;
+        left: -35px;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      position: relative;
+    }
+  }
 }

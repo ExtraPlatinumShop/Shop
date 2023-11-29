@@ -1,0 +1,98 @@
+.homeScreen {
+  .wrapper {
+    max-width: 1400px;
+    margin: auto;
+  }
+  .homeScreen_row {
+    top: -20px;
+    position: relative;
+    height: 800px;
+    width: 100%;
+    background-image: url(../../image/back-main-screen.svg);
+    background-repeat: no-repeat;
+    background-size: 75% 100%;
+    background-position: right;
+    .leftProduct {
+      position: absolute;
+      top: 200px;
+      right: 320px;
+      transform: rotate(-22.76deg);
+      height: 350px;
+      width: 150px;
+    }
+    .centerProduct {
+      position: absolute;
+      top: 190px;
+      right: 170px;
+      height: 600px;
+      width: 220px;
+      /* height: 80%;
+        width: 20%; */
+    }
+    .rightProduct {
+      position: absolute;
+      top: 350px;
+      right: 80px;
+      height: 350px;
+      width: 150px;
+      transform: rotate(15.45deg);
+    }
+    .aloe {
+      position: absolute;
+      top: 530px;
+      left: 245px;
+      height: 300px;
+      width: 400px;
+    }
+    .label {
+      margin-top: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      h1 {
+        margin-bottom: 50px;
+        width: 800px;
+        font-size: 70px;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+        span {
+          display: block;
+          color: #096518;
+        }
+      }
+      h2 {
+        max-width: 600px;
+        margin-bottom: 50px;
+      }
+      a {
+        display: inline-block;
+        padding: 25px 70px 25px 50px;
+        color: white;
+        border-radius: 65px;
+        background: #096518;
+        box-shadow: 0px 4px 25px 0px rgba(9, 101, 24, 0.25),
+          0px 4px 15px 0px rgba(71, 71, 71, 0.25) inset;
+        position: relative;
+        &::before {
+          content: "";
+          background-image: url(../../image/icons/Catalog-White.svg);
+          height: 25px;
+          width: 25px;
+          position: absolute;
+          top: 25px;
+          right: 35px;
+        }
+      }
+    }
+    .background {
+      text-align: right;
+      height: 800px;
+      width: 500px;
+      background-image: url(../../image/back-main-screen.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+     
+    }
+  }
+}

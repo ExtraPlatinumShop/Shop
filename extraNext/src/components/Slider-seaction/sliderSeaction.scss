@@ -1,0 +1,23 @@
+.swiper{
+    color: white;
+   
+    max-height: 550px;
+    overflow: hidden;
+   max-width: 300px ;
+
+}
+
+.swiper-slide{
+    display: flex;
+
+ 
+    max-width: 1000px;
+    height: 500px ;
+    width: 200px ;
+    
+}
+.swiper-slide img{
+    width: auto;
+    height: 500px;
+    
+}
