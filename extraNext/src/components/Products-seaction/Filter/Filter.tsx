@@ -11,6 +11,7 @@ const Filter = (props: any) => {
     { type: "dishwashing", label: `${t("Filter_Dishwashing")}` },
     { type: "window_soap", label: `${t("Filter_Window_soap")}` },
     { type: "krot", label: `${t("Filter_Krot")}` },
+    { type: "scented_water", label: `${t("Filter_Scented_water")}` },
     { type: "toilet_gel", label: `${t("Filter_Toilet_gel")}` },
     { type: "washing_powder", label: `${t("Filter_Washing_powder")}` },
     { type: "conditioner", label: `${t("Filter_Conditioner")}` },

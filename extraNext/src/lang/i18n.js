@@ -34,12 +34,13 @@ const resources = {
       Filter_Dishwashing: "Плин для посуду",
       Filter_Window_soap: "Засіб для миття вікон",
       Filter_Krot: "Крот для чищення труб",
+      Filter_Scented_water: "Запашна вода",
       Filter_Toilet_gel: "Гель для унітазу",
       Filter_Washing_powder: "Порошок для прання",
       Filter_Conditioner: "Кондиціонер",
       Filter_Bilizna: "Білизна",
       Filter_Parchment: "Пергамент",
-      Search:"Пошук....",
+      Search: "Пошук....",
       money: "Грн",
       ml: "мл",
       gram: "г",
@@ -202,10 +203,25 @@ const resources = {
       Toilet_gel_red: 'Гель для чищення туалета із запахом хвої"',
       Toilet_gel_red_text:
         "Гель для відбілювання та очищення туалетів на основі хлору. Ідеальний для ванних кімнат, раковин, кахлів та інших кислотостійких поверхонь. Спеціальний гіпохлорит натрію надає сяючого блиску і відмінно відбілює. Ефективно усуває плісняву та грибок, запобігаючи їх появі, і має дезінфікуючі властивості. Створює захисний шар на поверхні, запобігаючи відкладенням і полегшуючи наступне прибирання. Густа формула гелю збільшує час взаємодії з поверхнею для ефективного видалення забруднень. Це економічний та зручний у використанні засіб, повністю безпечний для людей та навколишнього середовища. 'Extra-platinum' - чистота та блиск в кожній пляшці об'ємом 750 грамів",
-      Parchment: 'Пергамент"',
+      Parchment: 'Пергамент',
       Parchment_text:
         "Пергамент для випічки – це ідеальне рішення для запобігання прилипання тіста до форми або листа. Він має подвійне силіконове покриття, що гарантує, що ваша випічка не пригорить і не залишить слідів на поверхнях. Зручності додає різноманітність розмірів та широта вибору, які ідеально підходять для будь-яких листів або духовок.",
-    },
+        Diplomat: 'Запашна вода Дипломат',
+        Diplomat_text:
+        'Поглибіться в світ елегантності та чарівності з туалетною водою "Дипломат". Цей унікальний аромат втілює в собі витонченість та розкіш, роблячи кожен момент особливим.Ноти аромату:"Дипломат" відкривається свіжими нотами цитрусових, доповненими чуттєвими акордами екзотичних квітів у серці та завершується теплими і тривалими нотами деревини та мускусу. Це поєднання створює неповторний букет, який вражає своєю унікальністю.Чому обрати "Дипломат": Елегантність: Аромат "Дипломат" втілює елегантність та стиль, додаючи вашому образу неповторний шар шарму.Тривалий ефект: Інтенсивність аромату гарантує тривалий ефект, даруючи вам відчуття свіжості та комфорту протягом усього дня. Ідеальний подарунок: "Дипломат" - ідеальний подарунок для тих, хто цінує якість та неперевершений стиль.',
+        For_man: 'Запашна вода Для Чоловіків',
+        For_man_text:
+        'Зануртеся в атмосферу мужності та витонченості з туалетною водою "Для Чоловіків". Цей унікальний аромат відзначається виразною міцністю та розкішшю, роблячи кожен момент особливим для сучасного чоловіка. Ноти аромату: "Для Чоловіків" відкривається іскристими нотами цитрусових, доповненими чуттєвими акордами екзотичних квітів у серці та завершується теплими і тривалими нотами деревини та мускусу. Це поєднання створює неповторний букет, який вражає своєю унікальністю. Чому обрати "Для Чоловіків": Мужність та стиль: Аромат "Для Чоловіків" втілює в собі мужність та стиль, додаючи вашому образу неповторний шар шарму. Тривалий ефект: Інтенсивність аромату гарантує тривалий ефект, даруючи вам відчуття свіжості та комфорту протягом усього дня. Ідеальний подарунок: "Для Чоловіків" - ідеальний подарунок для тих, хто цінує якість та неперевершений стиль. Дозвольте "Для Чоловіків" стати вашим вишуканим ароматом, який виокремить вашу неперевершену індивідуальність. Замовте його зараз та насолоджуйтеся неперевершеним враженням від цього елітного парфуму!', 
+        Sasha: 'Запашна вода Саша',
+        Sasha_text:
+        'Зануртеся в атмосферу мужності та витонченості з туалетною водою "Саша". Цей унікальний аромат відзначається виразною міцністю та розкішшю, роблячи кожен момент особливим для сучасного чоловіка. Ноти аромату: "Саша" відкривається іскристими нотами цитрусових, доповненими чуттєвими акордами екзотичних квітів у серці та завершується теплими і тривалими нотами деревини та мускусу. Це поєднання створює неповторний букет, який вражає своєю унікальністю. Чому обрати "Саша": Мужність та стиль: Аромат "Саша" втілює в собі мужність та стиль, додаючи вашому образу неповторний шар шарму. Тривалий ефект: Інтенсивність аромату гарантує тривалий ефект, даруючи вам відчуття свіжості та комфорту протягом усього дня. Ідеальний подарунок: "Саша" - ідеальний подарунок для тих, хто цінує якість та неперевершений стиль. Дозвольте "Саша" стати вашим вишуканим ароматом, який виокремить вашу неперевершену індивідуальність. Замовте його зараз та насолоджуйтеся неперевершеним враженням від цього елітного парфуму!', 
+        Konsul: 'Запашна вода Консул',
+        Konsul_text:
+        'Зануртеся в атмосферу мужності та витонченості з туалетною водою "Консул". Цей унікальний аромат відзначається виразною міцністю та розкішшю, роблячи кожен момент особливим для сучасного чоловіка. Ноти аромату: "Консул" відкривається іскристими нотами цитрусових, доповненими чуттєвими акордами екзотичних квітів у серці та завершується теплими і тривалими нотами деревини та мускусу. Це поєднання створює неповторний букет, який вражає своєю унікальністю. Чому обрати "Консул": Мужність та стиль: Аромат "Консул" втілює в собі мужність та стиль, додаючи вашому образу неповторний шар шарму. Тривалий ефект: Інтенсивність аромату гарантує тривалий ефект, даруючи вам відчуття свіжості та комфорту протягом усього дня. Ідеальний подарунок: "Консул" - ідеальний подарунок для тих, хто цінує якість та неперевершений стиль. Дозвольте "Консул" стати вашим вишуканим ароматом, який виокремить вашу неперевершену індивідуальність. Замовте його зараз та насолоджуйтеся неперевершеним враженням від цього елітного парфуму!', 
+        Triple: 'Запашна вода Трійний',
+        Triple_text:
+        'Зануртеся в атмосферу мужності та витонченості з туалетною водою "Трійний". Цей унікальний аромат відзначається виразною міцністю та розкішшю, роблячи кожен момент особливим для сучасного чоловіка. Ноти аромату: "Трійний" відкривається іскристими нотами цитрусових, доповненими чуттєвими акордами екзотичних квітів у серці та завершується теплими і тривалими нотами деревини та мускусу. Це поєднання створює неповторний букет, який вражає своєю унікальністю. Чому обрати "Трійний": Мужність та стиль: Аромат "Трійний" втілює в собі мужність та стиль, додаючи вашому образу неповторний шар шарму. Тривалий ефект: Інтенсивність аромату гарантує тривалий ефект, даруючи вам відчуття свіжості та комфорту протягом усього дня. Ідеальний подарунок: "Трійний" - ідеальний подарунок для тих, хто цінує якість та неперевершений стиль. Дозвольте "Трійний" стати вашим вишуканим ароматом, який виокремить вашу неперевершену індивідуальність. Замовте його зараз та насолоджуйтеся неперевершеним враженням від цього елітного парфуму!', 
+     },
   },
   en: {
     translation: {
@@ -239,12 +255,13 @@ const resources = {
       Filter_Dishwashing: "Dishwashing",
       Filter_Window_soap: "Window soap",
       Filter_Krot: "Pipe cleaner",
+      Filter_Scented_water: "Scented water",
       Filter_Toilet_gel: "Toilet gel",
       Filter_Washing_powder: "Washing powder",
       Filter_Conditioner: "Conditioner",
       Filter_Bilizna: "Laundry",
       Filter_Parchment: "Parchment",
-      Search:"Search....",
+      Search: "Search....",
       money: "UAH",
       ml: "ml",
       gram: "g",
@@ -381,7 +398,17 @@ const resources = {
       Parchment: "Baking Parchment",
       Parchment_text:
         "Baking parchment is an ideal solution to prevent dough from sticking to the baking sheet or tray. It has a double silicone coating that ensures your baking won't stick or leave marks on surfaces. The variety of sizes and options offered add convenience, perfectly suitable for any baking sheet or oven.",
-    },
+        Diplomat: 'Scented water Diplomat ',
+        Diplomat_text: 'Immerse yourself in the world of elegance and charm with the toilet water "Diplomat." This unique fragrance embodies sophistication and luxury, making every moment special. Fragrance notes: "Diplomat" opens with fresh citrus notes, complemented by sensual chords of exotic flowers in the heart, and concludes with warm and lasting notes of wood and musk. This combination creates a unique bouquet that impresses with its uniqueness. Why choose "Diplomat": Elegance: The "Diplomat" fragrance embodies elegance and style, adding a unique layer of charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Ideal gift: "Diplomat" is the perfect gift for those who appreciate quality and unmatched style.',
+        For_man: 'Scented water For Men ',
+        For_man_text: 'Immerse yourself in the atmosphere of masculinity and sophistication with the toilet water "For Men." This unique fragrance is distinguished by pronounced strength and luxury, making every moment special for the modern man. Fragrance notes: "For Men" opens with sparkling notes of citrus, complemented by sensual chords of exotic flowers in the heart, and concludes with warm and lasting notes of wood and musk. This combination creates a unique bouquet that impresses with its uniqueness. Why choose "For Men": Masculinity and style: The "For Men" fragrance embodies masculinity and style, adding a unique layer of charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Ideal gift: "For Men" is the perfect gift for those who appreciate quality and unmatched style. Allow "For Men" to become your refined fragrance that highlights your unparalleled individuality. Order it now and enjoy the unmatched impression of this elite perfume!',
+        Sasha: 'Scented water Sasha ',
+        Sasha_text: 'Immerse yourself in the atmosphere of masculinity and sophistication with the toilet water "Sasha." This unique fragrance is distinguished by pronounced strength and luxury, making every moment special for the modern man. Fragrance notes: "Sasha" opens with sparkling notes of citrus, complemented by sensual chords of exotic flowers in the heart, and concludes with warm and lasting notes of wood and musk. This combination creates a unique bouquet that impresses with its uniqueness. Why choose "Sasha": Masculinity and style: The "Sasha" fragrance embodies masculinity and style, adding a unique layer of charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Ideal gift: "Sasha" is the perfect gift for those who appreciate quality and unmatched style. Allow "Sasha" to become your refined fragrance that highlights your unparalleled individuality. Order it now and enjoy the unmatched impression of this elite perfume!',
+        Konsul: 'Scented water Consul ',
+        Konsul_text: 'Immerse yourself in the atmosphere of masculinity and sophistication with the toilet water "Consul." This unique fragrance is distinguished by pronounced strength and luxury, making every moment special for the modern man. Fragrance notes: "Consul" opens with sparkling notes of citrus, complemented by sensual chords of exotic flowers in the heart, and concludes with warm and lasting notes of wood and musk. This combination creates a unique bouquet that impresses with its uniqueness. Why choose "Consul": Masculinity and style: The "Consul" fragrance embodies masculinity and style, adding a unique layer of charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Ideal gift: "Consul" is the perfect gift for those who appreciate quality and unmatched style. Allow "Consul" to become your refined fragrance that highlights your unparalleled individuality. Order it now and enjoy the unmatched impression of this elite perfume!',
+        Triple: 'Scented water Triple ',
+        Triple_text: 'Immerse yourself in the atmosphere of masculinity and sophistication with the toilet water "Triple." This unique fragrance is distinguished by pronounced strength and luxury, making every moment special for the modern man. Fragrance notes: "Triple" opens with sparkling notes of citrus, complemented by sensual chords of exotic flowers in the heart, and concludes with warm and lasting notes of wood and musk. This combination creates a unique bouquet that impresses with its uniqueness. Why choose "Triple": Masculinity and style: The "Triple" fragrance embodies masculinity and style, adding a unique layer of charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Ideal gift: "Triple" is the perfect gift for those who appreciate quality and unmatched style. Allow "Triple" to become your refined fragrance that highlights your unparalleled individuality. Order it now and enjoy the unmatched impression of this elite perfume!',
+      },
   },
 };
 

@@ -25,6 +25,10 @@
     height: 230px;
       
     }
+    @media (max-width:375px) {
+      height: 175px;
+        max-width: 125px;
+      }
   object-fit: contain;
   transition: transform 0.3s ease; /* Додайте плавний перехід */
   &:hover {

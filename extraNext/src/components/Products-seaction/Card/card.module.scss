@@ -20,9 +20,9 @@
   border-radius: 10px;
   padding: 10px 10px 20px 10px;
   .card_image {
+    flex: 0 0 auto;
     transition-duration: 0.3s;
-    text-align: center;
-    margin: auto;
+    align-self: center;
     height: 210px;
     width: 140px;
     margin-bottom: 20px;

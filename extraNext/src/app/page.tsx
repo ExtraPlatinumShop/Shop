@@ -45,6 +45,12 @@ export default function Home() {
     {
       loading  ?<Loading/>:
       <>
+      <form action="telegram.php" method="post">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="tel" name="phone" placeholder="Phone" />
+        <input type="text" name="email" placeholder="Email" />
+        <button type="submit">submit</button>
+      </form>
        <HomeScreen />
       <ProductsSeaction />
       </>
