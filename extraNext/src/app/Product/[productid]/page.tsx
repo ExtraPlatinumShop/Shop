@@ -48,6 +48,7 @@ export default function Page() {
     capacity: string;
     albom: string[];
     albomName:string[];
+    unit:string;
   }
 
   const [information, setInformation] = useState<TypeCard>();
@@ -91,6 +92,8 @@ export default function Page() {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
   }, []);
+
+  
   return (<>
   {information ?  <section className={style.product_page}>
       <div className={style.wrapper}>
@@ -101,6 +104,7 @@ export default function Page() {
           <div className={style.product_row}>
             <div className={style.product_visual}>
               <div className={style.slider}>
+                {information.albom[0] !=''?
                 <Swiper
                   ref={sliderRef}
                   className={style.vertical_swiper}
@@ -130,6 +134,7 @@ export default function Page() {
                     {arrow}
                   </div>
                 </Swiper>
+              : ''}
               </div>
               <div className={style.main_image_slider}>
                 <div className={style.image_slider}>
@@ -147,7 +152,7 @@ export default function Page() {
                   {information && (
                     <>
                       {`${information.capacity} ${t(
-                        information.capacity < "500" ? "litr" : "ml"
+                        information.unit
                       )}`}
                     </>
                   )}
@@ -166,14 +171,14 @@ export default function Page() {
                   {information && (
                     <>
                       {`${information.capacity} ${t(
-                        information.capacity < "500" ? "litr" : "ml"
+                        information.unit
                       )}`}
                     </>
                   )}
                 </div>
               </div>
               <div className={style.stock}>{t('Stock')}</div>
-              <div className={style.btn_to_cart}>{t("To_basket")}</div>
+              <button className={style.btn_to_cart}>{t("To_basket")}</button>
               <div
                 className={
                   active

@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
           <ul className={styles.footer_nav}>
             <li>
-              <Link href="#catalog">{t("Home_screen_to_catalog")}</Link>
+              <Link href="/#catalog">{t("Home_screen_to_catalog")}</Link>
               <Image
                 src={catalog}
                 alt="Picture Catalog"
@@ -52,8 +52,8 @@ export default function Footer() {
               </a>
             </div>
             <div className={styles.graph}>
-              <h2>Графік роботи:</h2>
-              <p>Пн-Нд 9:00 — 20:00</p>
+              <h2>{t('Footer_Work_Schedule')}</h2>
+              <p>{t('Footer_Time')}</p>
             </div>
           </div>
         </div>

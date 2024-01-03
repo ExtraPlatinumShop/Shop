@@ -7,7 +7,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./swiper.css";
-import Link from "next/link";
+import Zoom from "@/UI/zoom/Zoom";
+import { PinchZoomPanImage } from '@secretwpn/react-image-zoom'
 
 interface Props {
   name: string;
@@ -37,9 +38,10 @@ const MySwiper = (props: Props) => {
           </Link>
         </SwiperSlide>
       ))} */}
-      <SwiperSlide >
-        
-        <img src={image} alt={`Фото`} />
+      <SwiperSlide className={`vertical_slide image_zoom`}>
+    
+        <img src={image} alt="" />
+       
  
     </SwiperSlide>
     </Swiper>

@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -30,6 +29,7 @@ aside {
   display: block;
 }
 
+
 html,
 body {
   height: 100%;
@@ -42,6 +42,7 @@ body {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
+
 
 input::-ms-clear {
   display: none;
@@ -84,6 +85,9 @@ h6 {
 }
 
 /************************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
   position: relative;
   color: var(--, #1e1e1e);
@@ -94,9 +98,11 @@ body {
   line-height: normal;
   display: flex;
   flex-direction: column;
-}
 
-section {
-  padding: 0px 10px;
+  
+}
+section{
+  
   flex: 1 1 auto;
+
 }

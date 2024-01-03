@@ -1,5 +1,8 @@
 .lang{
     display: flex;
+    @media (max-width:1000px) {
+        font-size: 16px;
+    }
 }
 .ua{
     margin-right: 10px;

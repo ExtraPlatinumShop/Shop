@@ -17,7 +17,7 @@ export default function Card(
       </div>
       <div className={style.card_label}>{t(`${props.name}`)}</div>
       <div className={style.card_info}>
-        <div className={style.price}>{props.price}</div>
+        <div className={style.price}>{props.price}  {t("money")}</div>
         <div className={style.add_to_cart}>
           <Image src={star} alt="star"></Image>
         </div>

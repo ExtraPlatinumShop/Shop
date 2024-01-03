@@ -1,17 +1,44 @@
 import React, { useState } from "react";
 import style from "./filter.module.scss";
-export default function Filter() {
+import { useTranslation } from "react-i18next";
+
+const Filter = (props: any) => {
+  const { t } = useTranslation("");
+
+  const categories = [
+    { type: "All", label: `${t("Filter_All")}` },
+    { type: "soap", label: `${t("Filter_Soap")}` },
+    { type: "dishwashing", label: `${t("Filter_Dishwashing")}` },
+    { type: "window_soap", label: `${t("Filter_Window_soap")}` },
+    { type: "krot", label: `${t("Filter_Krot")}` },
+    { type: "toilet_gel", label: `${t("Filter_Toilet_gel")}` },
+    { type: "washing_powder", label: `${t("Filter_Washing_powder")}` },
+    { type: "conditioner", label: `${t("Filter_Conditioner")}` },
+    { type: "bilizna", label: `${t("Filter_Bilizna")}` },
+    { type: "parchment", label: `${t("Filter_Parchment")}` },
+  ];
+
   const [open, setOpen] = useState(false);
+  const [category, setCategory] = useState('');
+
+  const handleCategoryClick = (type: string, label: string, e:any) => {
+    props.takeData(type);
+    type == "All" ? setCategory (`${t("Filter_Categoty")}`) : setCategory(label);
+    
+    
+  };
 
   return (
     <div
-      className={open ? style.filter + " " + style.active : style.filter}
+      className={`${style.filter} ${open ? style.active : ""}`}
       onClick={() => {
         setOpen(!open);
       }}
     >
-      <div className={style.label}>Категорії</div>
-      <svg className={style.svg}        xmlns="http://www.w3.org/2000/svg"
+      <div className={style.label}>{ category == ''?  `${t("Filter_Categoty")}`: category }</div>
+      <svg
+        className={style.svg}
+        xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
         viewBox="0 0 20 20"
@@ -22,19 +49,28 @@ export default function Filter() {
           fill={open ? "#096518" : "#787878"}
         />
       </svg>
+
       <div className={style.filter_list}>
         <ul className={style.list}>
-          <li>Все</li>
-          <li>Плин для посуду</li>
-          <li>Засіб для миття вікон</li>
-          <li>Крот для чищення труб</li>
-          <li>Гель для унітазу</li>
-          <li>Порошок для прання</li>
-          <li>Білизна</li>
-          <li>Пергамент</li>
-          <li>Мило</li>
+          {categories.map((category, index) => (
+            <li
+              key={index}
+              datatype={category.type}
+              onClick={(e) =>
+                handleCategoryClick(
+                  e.target.getAttribute("datatype"),
+                  category.label,
+                  e.target
+                )
+              }
+            >
+              {category.label}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   );
-}
+};
+
+export default Filter;

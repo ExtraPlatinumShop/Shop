@@ -19,6 +19,7 @@
     "react-dom": "^18",
     "react-i18next": "^13.5.0",
     "react-icons": "^4.11.0",
+    "react-image-magnify": "^2.7.4",
     "sass": "^1.69.5",
     "swiper": "^11.0.4"
   },

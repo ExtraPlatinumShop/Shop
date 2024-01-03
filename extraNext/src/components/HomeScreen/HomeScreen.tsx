@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./HomeScreen.module.scss";
 import Image from "next/image";
-import back from "@/image/back-main-screen.svg";
 import leftProduct from "@/image/products/litl-soap-aloe.png";
 import centerProduct from "@/image/products/opolisk-yellow.png";
 import rightProduct from "@/image/products/toilet.png";
@@ -25,26 +24,19 @@ export default function HomeScreen() {
             className={style.rightProduct}
             src={rightProduct}
             alt="Product image"
-          ></Image>{" "}
+          ></Image>
           <Image
             className={style.centerProduct}
             src={centerProduct}
             alt="Product image"
           ></Image>
-             <Image
-            className={style.aloe}
-            src={aloe}
-            alt="Aloe image"
-          ></Image>
+          <Image className={style.aloe} src={aloe} alt="Aloe image"></Image>
           <div className={style.label}>
             <h1>
-              Чистота з комфортом: Побутова Хімія від
-              <span>EXTRA platinum</span>
+              {t("Home_screen_H1_label")}
+              <span>{t("EXTRA")}</span>
             </h1>
-            <h2>
-              Відкрийте світ бездоганної чистоти та свіжості з нашою ефективною
-              лінійкою засобів для дому.
-            </h2>
+            <h2>{t("Home_screen_H2_label")}</h2>
             <Link href="#catalog">{t("Home_screen_to_catalog")}</Link>
           </div>
         </div>

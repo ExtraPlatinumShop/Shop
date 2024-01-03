@@ -7,11 +7,14 @@ import "@/lang/i18n";
 import { onValue, ref } from "firebase/database";
 import HomeScreen from "@/components/HomeScreen/HomeScreen";
 import { useTranslation } from "react-i18next";
+import Loading from "./loading";
 
-type Todo = object;
 <link rel="icon" href="/src/app/favicon.ico" sizes="any" />;
 
+type Todo = object;
+
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isInitialRender, setIsInitialRender] = useState<boolean>(true);
 
@@ -33,12 +36,20 @@ export default function Home() {
         });
       }
     });
+    setLoading(false)
   }, [isInitialRender, setTodos, setIsInitialRender]);
-
+ 
+  
   return (
     <>
-      <HomeScreen />
+    {
+      loading  ?<Loading/>:
+      <>
+       <HomeScreen />
       <ProductsSeaction />
+      </>
+    }
+      
     </>
   );
 }
