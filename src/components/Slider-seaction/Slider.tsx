@@ -7,8 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./swiper.css";
-import Zoom from "@/UI/zoom/Zoom";
-import { PinchZoomPanImage } from '@secretwpn/react-image-zoom'
+
 
 interface Props {
   name: string;
