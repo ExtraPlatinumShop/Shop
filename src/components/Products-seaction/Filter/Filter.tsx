@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 import style from "./filter.module.scss";
 import { useTranslation } from "react-i18next";
 
-const Filter = (props: any) => {
+interface Category {
+  type: string;
+  label: string;
+}
+
+interface FilterProps {
+  takeData: (value: string) => void;
+}
+
+const Filter: React.FC<FilterProps> = (props) => {
   const { t } = useTranslation("");
 
-  const categories = [
+  const categories: Category[] = [
     { type: "All", label: `${t("Filter_All")}` },
     { type: "soap", label: `${t("Filter_Soap")}` },
     { type: "dishwashing", label: `${t("Filter_Dishwashing")}` },
@@ -20,13 +29,11 @@ const Filter = (props: any) => {
   ];
 
   const [open, setOpen] = useState(false);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState<string>('');
 
-  const handleCategoryClick = (type: string, label: string, e:any) => {
-    props.takeData(type);
-    type == "All" ? setCategory (`${t("Filter_Categoty")}`) : setCategory(label);
-    
-    
+  const handleCategoryClick = (type: string, label: string) => {
+    props.takeData(type === "All" ? "All" : type);
+    setCategory(type === "All" ? `${t("Filter_All")}` : label);
   };
 
   return (
@@ -36,7 +43,7 @@ const Filter = (props: any) => {
         setOpen(!open);
       }}
     >
-      <div className={style.label}>{ category == ''?  `${t("Filter_Categoty")}`: category }</div>
+      <div className={style.label}>{category === '' ? `${t("Filter_All")}` : category}</div>
       <svg
         className={style.svg}
         xmlns="http://www.w3.org/2000/svg"
@@ -57,13 +64,7 @@ const Filter = (props: any) => {
             <li
               key={index}
               datatype={category.type}
-              onClick={(e) =>
-                handleCategoryClick(
-                  e.target.getAttribute("datatype"),
-                  category.label,
-                  e.target
-                )
-              }
+              onClick={(e: MouseEvent) => handleCategoryClick(category.type, category.label)}
             >
               {category.label}
             </li>

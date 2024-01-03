@@ -22,9 +22,15 @@ export default function Header() {
   function burgerFunction() {
     setActive(!active);
   }
-  function closeBurger(element: any) {
-    element.target.className.includes("burger_content") ? setActive(false) : "";
+  function closeBurger(event: React.MouseEvent<HTMLDivElement>) {
+    if (
+      event.target instanceof HTMLElement &&
+      event.target.className.includes("burger_content")
+    ) {
+      setActive(false);
+    }
   }
+  
   return (
     <header className={style.header}>
       <div className={style.header_wrapper}>
@@ -95,7 +101,7 @@ export default function Header() {
               }
             ></div>
             <div
-              onClick={(e) => closeBurger(e)}
+              onClick={(e ) => closeBurger(e)}
               className={style.burger_content}
             >
               <div className={style.burger_main}>

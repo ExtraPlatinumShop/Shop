@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import price from "@/image/icons/Price.svg";
 import Image from "next/image";
 import Slider from "@/components/Slider-seaction/Slider";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperRef} from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
@@ -81,7 +81,7 @@ export default function Page() {
   const translatedName = information ? t(information.name) : "";
   const translatedText = information ? t(information.text) : "";
 
-  const sliderRef: any = useRef(null);
+  const sliderRef= useRef<SwiperRef>(null);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
