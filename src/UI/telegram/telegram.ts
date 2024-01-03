@@ -15,7 +15,7 @@ async function sendTelegramMessage(message: string): Promise<void> {
     await axios.post(apiUrl, params);
     console.log('Повідомлення відправлено успішно.');
   } catch (error) {
-    console.error('Помилка під час відправки повідомлення на Telegram:', error.message);
+    console.error('Помилка під час відправки повідомлення на Telegram:');
   }
 }
 
