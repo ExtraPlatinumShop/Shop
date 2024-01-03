@@ -14,7 +14,7 @@ export default function Cooparation() {
   return  (<div className="App">
   <h1>Співпраця</h1>
   <p>Залиште ваші контактні дані, і ми з вами зв'яжемося:</p>
-  <form  action="telegram.php" >
+  <form  action="telegram.php" method='post' >
     <label>
       Ім'я:
       <input type="text" name="name" /* onChange={(e) => setName(e.target.value)} */ />
