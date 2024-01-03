@@ -1,8 +1,5 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/About-us/page": "app/About-us/page.js",
-  "/Cooperation/page": "app/Cooperation/page.js",
-  "/Product/[productid]/page": "app/Product/[productid]/page.js",
+  "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/Cooperation/page": "app/Cooperation/page.js"
 }
