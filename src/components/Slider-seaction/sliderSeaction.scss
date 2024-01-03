@@ -1,0 +1,39 @@
+.swiper {
+  color: white;
+
+  max-height: 550px;
+  overflow: hidden;
+  max-width: 300px;
+@media (max-width:425px) {
+  max-width: 150px;
+  
+}
+}
+
+.swiper-slide {
+  display: flex;
+
+  max-width: 1000px;
+  height: 500px;
+  width: 200px;
+}
+.swiper-slide img {
+  max-width: 320px;
+  width: auto;
+  height: 500px;
+  @media (max-width:425px) {
+    height: 230px;
+      
+    }
+    @media (max-width:375px) {
+      height: 175px;
+        max-width: 125px;
+      }
+  object-fit: contain;
+  transition: transform 0.3s ease; /* Додайте плавний перехід */
+  &:hover {
+    position: relative;
+    transform: scale(1.3); /* Збільшення масштабу при наведенні */
+    z-index: 9999; /* Опціонально: піднімання наведеного зображення над іншими елементами */
+  }
+}
