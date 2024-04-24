@@ -207,7 +207,7 @@ section {
 }
 .footer_footer_row__uwFcQ .footer_contact_info__c7frX .footer_contact__tLg03 .footer_telephone__6T_3z::before {
   content: "";
-  background-image: url(/_next/static/media/Phone-LiteGreen.d33a6da2.svg);
+  background-image: url(/_next/static/media/Phone-LiteGreen.68f5e00d.svg);
   background-size: contain;
   background-repeat: no-repeat;
   fill: var(--2, #00ad1c);
@@ -237,7 +237,7 @@ section {
 }
 .footer_footer_row__uwFcQ .footer_contact_info__c7frX .footer_contact__tLg03 .footer_street__Jctbl::before {
   content: "";
-  background-image: url(/_next/static/media/Location-LiteGreen.f7665e9c.svg);
+  background-image: url(/_next/static/media/Location-LiteGreen.50b96fb5.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -269,9 +269,18 @@ section {
     font-size: 16px;
   }
 }
-
 .lang_ua__MhrLw {
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.lang_en__lCR_m {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.lang_ru__kuMFQ {
+  cursor: pointer;
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/header/header.module.scss ***!
@@ -511,7 +520,7 @@ section {
 }
 .header_navigate__a2Z4s li .header_telephone__O7JUi::before {
   content: "";
-  background-image: url(/_next/static/media/Phone.3060ae83.svg);
+  background-image: url(/_next/static/media/Phone.bcb02958.svg);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -536,7 +545,7 @@ section {
 }
 .header_navigate__a2Z4s li .header_street__oK6pL::before {
   content: "";
-  background-image: url(/_next/static/media/Location.d1bf6aaa.svg);
+  background-image: url(/_next/static/media/Location.763fa6aa.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import "@/lang/i18n";
 import { getDatabase, onValue, ref } from "firebase/database";
 import HomeScreen from "@/components/HomeScreen/HomeScreen";
-import Loading from "./loading";
 
 <link rel="icon" href="/src/app/favicon.ico" sizes="any" />;
 
@@ -27,8 +26,6 @@ export default function Home() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isInitialRender, setIsInitialRender] = useState<boolean>(true);
 
-
-
   useEffect(() => {
     const fetchData = async () => {
       const database = getDatabase();
@@ -36,7 +33,7 @@ export default function Home() {
   
       onValue(dbRef, (snapshot) => {
         const data = snapshot.val();
-  
+
         if (isInitialRender) {
           setIsInitialRender(false);
           setTodos([]);
@@ -48,7 +45,6 @@ export default function Home() {
           setTodos((prevTodos) => [...prevTodos, ...todosArray]);
         }
       });
-  
       setLoading(false);
     };
   
@@ -57,15 +53,8 @@ export default function Home() {
   
   return (
     <>
-    {
-      loading  ?<Loading/>:
-      <>
-    
-       <HomeScreen />
+      <HomeScreen />
       <ProductsSeaction />
-      </>
-    }
-      
     </>
-  );
+);
 }

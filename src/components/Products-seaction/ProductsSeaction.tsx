@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./productsSeaction.module.scss";
 import Filter from "./Filter/Filter";
 import Card from "./Card/Card";
@@ -44,6 +44,37 @@ const ProductsSection: React.FC = () => {
 const filteredData = finalData.filter((card: TypeCard) =>
 t(card.name).toLowerCase().includes(dataSearch.toLowerCase())
   );
+
+
+
+
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+  const [loadCount, setLoadCount] = useState(12);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      setIsVisible(entries[0].isIntersecting);
+    }, {
+      root: null,
+      threshold: 0,
+    });
+    observer.observe(elementRef.current);
+    
+    return () => observer.unobserve(elementRef.current);
+  
+  }, [elementRef]);
+  useEffect(() => {
+    if (isVisible && loadCount < filteredData.length ) {
+      setLoadCount(loadCount + 12)
+    }
+    return () => {
+      
+    };
+  }, [isVisible]);
+
+
+  
+
   return (
     <section id="catalog" className={style.product_block}>
       <div className={style.wrapper}>
@@ -74,12 +105,13 @@ t(card.name).toLowerCase().includes(dataSearch.toLowerCase())
       ) : (
         filteredData.map((card: TypeCard, index: number) =>
           dataType === "All" ? (
+            index<loadCount?
             <Card
               key={index}
               name={card.name}
               price={card.price}
               image={card.img}
-            />
+            /> :''
           ) : dataType === card.tag && (
             <Card
               key={index}
@@ -90,6 +122,7 @@ t(card.name).toLowerCase().includes(dataSearch.toLowerCase())
           )
         )
       )}
+      <div ref={elementRef} className=""> </div>
             </div>
           </div>
         </div>
