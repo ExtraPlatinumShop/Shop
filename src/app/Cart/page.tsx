@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import style from "./style.module.scss";
+import { sendEmail } from "@/UI/mail/send-email";
+import Contact from "@/components/Contact/Contact";
 
-
+export type FormData = {
+    email: string;
+    message: string;
+  };
 export default function Cart() {
   const [mail, setmail] = useState("");
   const [messege, setMessege] = useState("");
@@ -33,10 +38,15 @@ export default function Cart() {
     }
   } */
   
-  const handleSubmit = async (event :any) => {
-    event.preventDefault();
 
-    const data = {
+/*   const handleSubmit = async (event :any) => {
+    event.preventDefault();
+    const data : FormData={
+        email:mail,
+        message:messege
+    }
+
+   /*  const data = {
       email: mail,
       message: messege,
     };
@@ -60,29 +70,12 @@ export default function Cart() {
     } catch (error) {
       console.error(error);
       setStatus("Ошибка!");
-    }
-  };
+    } */
+ 
+  
   return (
     <section className={style.cart}>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Your email:
-          <input
-            name="email"
-            value={mail}
-            onChange={(e) => setmail(e.target.value)}
-          />{" "}
-          Your message:
-          <input value={messege} onChange={(e) => setMessege(e.target.value)} />
-        </label>
-
-        <button
-          type="submit"
-          /* onClick={(e) => sendMessege({ mail, messege }, e)} */
-        >
-          sendMessege
-        </button>
-      </form>
+      <Contact/>
     </section>
   );
 }
