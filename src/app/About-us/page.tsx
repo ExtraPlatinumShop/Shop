@@ -1,7 +1,5 @@
 import React from "react";
-import SearchComponent from "../../UI/novaPost/SearchComponent";
 import style from "./about.module.scss";
-import {ContactForm} from "@/UI/mail/mail"
 export default function AboutUs() {
   return (
      <section className={style.about}>
@@ -87,21 +85,6 @@ export default function AboutUs() {
         засобів. приготуванні страв, зберігання їх смаку та корисних
         властивостей.
       </div>  
-      <form
-  action="https://formspree.io/f/mayravgr"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email"/>
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-{/*   <!-- your other form fields go here --> */}
-  <button type="submit">Send</button>
-</form>
     </section>
    
 
