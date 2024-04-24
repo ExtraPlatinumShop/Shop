@@ -126,6 +126,7 @@
 .card_product_card__jnE_b .card_card_label__7P7Dj {
   margin-bottom: 5px;
   padding: 1px 5px;
+  flex: 1 1 auto;
 }
 .card_product_card__jnE_b .card_card_info__OuT4O {
   display: flex;

@@ -1,10 +1,16 @@
 import React from "react";
 import style from "./about.module.scss";
+import {ContactForm} from "@/UI/mail/mail";
+
 export default function AboutUs() {
+
   return (
      <section className={style.about}>
       <div className={style.company_info}>
         <h2 className={style.about_label}> Про компанію </h2>
+
+        <ContactForm/>
+  
         <p>
           Звітно про нашу компанію, яка знаходиться у чарівному Львові. Ми є
           творцями високоякісної побутової хімії, спеціалізуючись на розробці та

@@ -8,9 +8,9 @@ import aloe from "@/image/aloe-main-screen.svg";
 import "@/lang/i18n";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+
 export default function HomeScreen() {
   const { t, i18n } = useTranslation();
-
   return (
     <section className={style.homeScreen}>
       <div className={style.wrapper}>

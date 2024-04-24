@@ -35,6 +35,7 @@
   .card_label {
     margin-bottom: 5px;
     padding: 1px 5px;
+    flex: 1 1 auto;
   }
   .card_info {
     display: flex;
@@ -55,22 +56,22 @@
 }
 @media (max-width: 425px) {
   .product_card {
-  padding: 10px ;
-  width: 110px;
+    padding: 10px;
+    width: 110px;
     font-size: 8px;
     .card_image {
-      margin: 0px ;
+      margin: 0px;
       margin-bottom: 5px;
-    
+
       height: 120px;
       width: 90px;
     }
-    .card_label{
+    .card_label {
       flex: 1 1 auto;
     }
-    .card_info{
+    .card_info {
       padding: 0px 5px;
-      .price{
+      .price {
         font-size: 12px;
       }
       .add_to_cart {
