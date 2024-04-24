@@ -28,6 +28,12 @@
       "static/chunks/main-app.js",
       "static/css/app/About-us/page.css",
       "static/chunks/app/About-us/page.js"
+    ],
+    "/Cart/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Cart/page.css",
+      "static/chunks/app/Cart/page.js"
     ]
   }
 }
