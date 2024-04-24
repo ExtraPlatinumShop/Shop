@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import style from "./productsSection.module.scss";
+import style from "./productsSeaction.module.scss";
 import Filter from "./Filter/Filter";
 import Card from "./Card/Card";
 import Search from "./Search/Search";
