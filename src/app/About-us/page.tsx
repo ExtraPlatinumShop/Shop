@@ -1,8 +1,10 @@
 import React from "react";
+import SearchComponent from "../../UI/novaPost/SearchComponent";
 import style from "./about.module.scss";
+import {ContactForm} from "@/UI/mail/mail"
 export default function AboutUs() {
   return (
-    <section className={style.about}>
+     <section className={style.about}>
       <div className={style.company_info}>
         <h2 className={style.about_label}> Про компанію </h2>
         <p>
@@ -79,12 +81,30 @@ export default function AboutUs() {
         </ul>
       </div>
       <div className={style.result}>
-        Кожен з цих продуктів - результат тщатного вибору натуральних
+        Кожен з цих продуктів - результат ретельного вибору натуральних
         компонентів, досліджень та інновацій. Ми прагнемо подарувати кожному
         дому не лише чистоту, але й здоров'я та комфорт у використанні наших
         засобів. приготуванні страв, зберігання їх смаку та корисних
         властивостей.
-      </div>
+      </div>  
+      <form
+  action="https://formspree.io/f/mayravgr"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email"/>
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+{/*   <!-- your other form fields go here --> */}
+  <button type="submit">Send</button>
+</form>
     </section>
+   
+
+    
   );
 }
