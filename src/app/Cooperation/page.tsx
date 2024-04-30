@@ -1,17 +1,17 @@
-"use client"
-import React, { useState } from 'react'
-import  {SubmitHandler}  from "react-hook-form";
+"use client";
+import CoopForm from "@/components/CoopForm/CoopForm";
+import CoopInfo from "@/components/CoopInfo/CoopInfo";
+import React, { useState } from "react";
+import { SubmitHandler } from "react-hook-form";
+import style from "./style.module.scss";
 
 export default function Cooparation() {
-
-
   const [files, setFiles] = useState<File[]>();
-
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
 
-  const handleSendForm = async (data :any) => {
+  const handleSendForm = async (data: any) => {
     setIsSubmitting(true);
     const text =
       `Привіт, Людмило!🙌\n` +
@@ -78,32 +78,10 @@ export default function Cooparation() {
       setIsSubmitting(false);
     }
   };
-  return  (<div className="App">
-  <h1>Співпраця</h1>
-  <p>Залиште ваші контактні дані, і ми з вами зв'яжемося:</p>
-  <form  /* action="telegram.ts" */ method='post' onSubmit={handleSendForm} >
-    <label>
-      Ім'я:
-      <input type="text" name="name" /* onChange={(e) => setName(e.target.value)} */ />
-    </label>
-    <br />
-    <label>
-      Електронна пошта:
-      <input type="email" name="email"/*  onChange={(e) => setEmail(e.target.value)} */ />
-    </label>
-    <br />
-    <label>
-      Повідомлення:
-      <textarea name={"message"} /* onChange={(e) => setMessage(e.target.value)}  *//>
-    </label>
-    <br />
-    <button type="submit">Відправити</button>
-  </form>
-  <div>
-    <h2>Контактні дані</h2>
-    <p>Телефон: +1 23 456 7890</p>
-    <p>Email: example@example.com</p>
-  </div>
-</div>
-);
+  return (
+    <div className={style.cooperation}>
+      <CoopForm />
+      <CoopInfo />
+    </div>
+  );
 }

@@ -1,0 +1,61 @@
+.CoopInfo {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  max-width: 475px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .info {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      backdrop-filter: blur(5px);
+      background: rgba(101, 150, 94, 0.8);
+      height: 285px;
+      color: white;
+      padding: 35px;
+      border-bottom-right-radius: 25px;
+
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 146%;
+        letter-spacing: 0.04em;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 146%;
+        letter-spacing: 0.04em;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      .phone,
+      .email {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 146%;
+        letter-spacing: 0.04em;
+        color: #fff;
+        span {
+          margin-right: 45px;
+        }
+        a {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 146%;
+          letter-spacing: 0.04em;
+          color: #01ff2a;
+        }
+      }
+    }
+  }
+}

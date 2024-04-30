@@ -62,7 +62,7 @@ export default function Header() {
               <Link href="/About-us">{t("Header_About_Us")}</Link>
             </li>
             <li>
-              <Link href="">{t("Header_Basket")}</Link>
+              <Link href="/Cart">{t("Header_Basket")}</Link>
             </li>{" "}
             <li>
               <Link href="/Cooperation">{t("Header_Сooperation")}</Link>
