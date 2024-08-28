@@ -1,4 +1,4 @@
-// File: D:\extra-react\Нова папка\Shop-1\src\app\page.tsx
+// File: /Users/user/Desktop/Projects/Shop/src/app/page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
