@@ -207,7 +207,7 @@ section {
 }
 .footer_footer_row__uwFcQ .footer_contact_info__c7frX .footer_contact__tLg03 .footer_telephone__6T_3z::before {
   content: "";
-  background-image: url(/_next/static/media/Phone-LiteGreen.68f5e00d.svg);
+  background-image: url(/_next/static/media/Phone-LiteGreen.d33a6da2.svg);
   background-size: contain;
   background-repeat: no-repeat;
   fill: var(--2, #00ad1c);
@@ -237,7 +237,7 @@ section {
 }
 .footer_footer_row__uwFcQ .footer_contact_info__c7frX .footer_contact__tLg03 .footer_street__Jctbl::before {
   content: "";
-  background-image: url(/_next/static/media/Location-LiteGreen.50b96fb5.svg);
+  background-image: url(/_next/static/media/Location-LiteGreen.f7665e9c.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -263,12 +263,34 @@ section {
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .lang_lang__w3vq0 {
   display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 1000px) {
   .lang_lang__w3vq0 {
     font-size: 16px;
   }
 }
+.lang_lang__w3vq0 li img {
+  cursor: pointer;
+  max-width: 30px;
+  max-height: 30px;
+  margin: 5px;
+}
+.lang_lang__w3vq0 .lang_activeLang__9CQXF {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+}
+.lang_lang__w3vq0 .lang_activeLang__9CQXF img {
+  margin-left: 5px;
+  width: 18px;
+  height: auto;
+}
+
 .lang_ua__MhrLw {
   margin-right: 10px;
   cursor: pointer;
@@ -281,6 +303,21 @@ section {
 
 .lang_ru__kuMFQ {
   cursor: pointer;
+}
+
+.lang_drop_down_list__U6cKZ {
+  opacity: 0;
+  border-radius: 5px;
+  background-color: rgba(137, 226, 137, 0.471);
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  transition-duration: 0.3s;
+  z-index: 0;
+}
+.lang_drop_down_list__U6cKZ.lang_active__uCDCm {
+  top: 30px;
+  opacity: 1;
 }
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/components/header/header.module.scss ***!
@@ -520,7 +557,7 @@ section {
 }
 .header_navigate__a2Z4s li .header_telephone__O7JUi::before {
   content: "";
-  background-image: url(/_next/static/media/Phone.bcb02958.svg);
+  background-image: url(/_next/static/media/Phone.3060ae83.svg);
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -545,7 +582,7 @@ section {
 }
 .header_navigate__a2Z4s li .header_street__oK6pL::before {
   content: "";
-  background-image: url(/_next/static/media/Location.763fa6aa.svg);
+  background-image: url(/_next/static/media/Location.d1bf6aaa.svg);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;

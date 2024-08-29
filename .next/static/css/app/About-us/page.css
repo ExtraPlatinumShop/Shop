@@ -1,0 +1,58 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[9].use[5]!./src/app/About-us/about.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.about_about__bHIuy {
+  max-width: 1000px;
+  margin: auto;
+  font-size: 22px;
+}
+.about_about__bHIuy .about_company_info__n9L69 {
+  margin: 45px 10px;
+  text-align: justify;
+}
+.about_about__bHIuy .about_company_info__n9L69 p {
+  margin-bottom: 20px;
+}
+.about_about__bHIuy .about_company_info__n9L69 .about_about_label__wnvOV {
+  text-align: center;
+  margin: 35px;
+  font-size: 40px;
+  font-weight: 800;
+  font-style: italic;
+}
+.about_about__bHIuy .about_products_info__LIf1r {
+  margin: 15px 25px;
+}
+.about_about__bHIuy .about_products_info__LIf1r .about_info_label___1d3j {
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.about_about__bHIuy .about_products_info__LIf1r .about_info_list__KHZPo {
+  display: flex;
+  flex-direction: column;
+}
+.about_about__bHIuy .about_products_info__LIf1r .about_info_list__KHZPo li {
+  position: relative;
+  margin: 15px 0px 15px 40px;
+}
+.about_about__bHIuy .about_products_info__LIf1r .about_info_list__KHZPo li span {
+  font-weight: 800;
+  font-size: 24px;
+  margin-right: 5px;
+}
+.about_about__bHIuy .about_products_info__LIf1r .about_info_list__KHZPo li::before {
+  content: "";
+  background-image: url(/_next/static/media/info-svgrepo-com.771ff9ea.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 45%;
+  left: -35px;
+}
+.about_about__bHIuy .about_result__u7eUs {
+  font-size: 25px;
+  margin: 45px 10px 15px;
+}

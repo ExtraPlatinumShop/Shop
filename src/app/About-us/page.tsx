@@ -9,7 +9,6 @@ export default function AboutUs() {
       <div className={style.company_info}>
         <h2 className={style.about_label}> Про компанію </h2>
 
-        <ContactForm/>
   
         <p>
           Звітно про нашу компанію, яка знаходиться у чарівному Львові. Ми є
