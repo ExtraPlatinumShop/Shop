@@ -19,7 +19,16 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import Loading from "@/app/loading";
 import NotFound from "@/app/not-found";
-
+export interface TypeCard {
+  name: string;
+  price: number;
+  img: string;
+  text: string;
+  capacity: string;
+  albom: string[];
+  albomName:string[];
+  unit:string;
+}
 export default function Page() {
   const [loading, setLoading] = useState(true);
 
@@ -40,16 +49,7 @@ export default function Page() {
   const pathname = usePathname();
   const currentpath = pathname.slice(9);
 
-  interface TypeCard {
-    name: string;
-    price: number;
-    img: string;
-    text: string;
-    capacity: string;
-    albom: string[];
-    albomName:string[];
-    unit:string;
-  }
+
 
   const [information, setInformation] = useState<TypeCard>();
   const { t } = useTranslation();
