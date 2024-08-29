@@ -24,7 +24,7 @@ const Contact: FC = () => {
           htmlFor='name'
           className='mb-3 block text-base font-medium text-black'
         >
-          Full Name
+          Повне імʼя
         </label>
         <input
           type='text'
