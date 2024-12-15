@@ -1,3 +1,16 @@
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { productid: string } }): Promise<Metadata> {
+  return {
+    title: `${params.productid} | Extra-Platinum`,
+    description: 'Якісна побутова хімія від виробника. Детальний опис продукту, характеристики та ціни.',
+    openGraph: {
+      title: `${params.productid} - Extra-Platinum`,
+      description: 'Побутова хімія від виробника',
+    }
+  };
+}
+
 "use client";
 import style from "./productPage.module.scss";
 import { onValue, ref, Database } from "firebase/database";
@@ -29,6 +42,8 @@ export interface TypeCard {
   albomName:string[];
   unit:string;
 }
+
+
 export default function Page() {
   const [loading, setLoading] = useState(true);
 

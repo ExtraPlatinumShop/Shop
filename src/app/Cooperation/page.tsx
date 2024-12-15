@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Співпраця | Extra-Platinum',
+  description: 'Пропозиції співпраці з Extra-Platinum. Станьте нашим партнером у сфері побутової хімії.',
+  openGraph: {
+    title: 'Співпраця з Extra-Platinum',
+    description: 'Партнерство у сфері побутової хімії',
+  }
+};
+
 "use client";
 import CoopForm from "@/components/CoopForm/CoopForm";
 import CoopInfo from "@/components/CoopInfo/CoopInfo";

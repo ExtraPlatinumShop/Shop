@@ -1,6 +1,16 @@
 import React from "react";
 import style from "./about.module.scss";
 import {ContactForm} from "@/UI/mail/mail";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Про нас | Extra-Platinum',
+  description: 'Дізнайтеся більше про компанію Extra-Platinum - виробника високоякісної побутової хімії у Львові. Наша місія, продукція та цінності.',
+  openGraph: {
+    title: 'Про компанію Extra-Platinum',
+    description: 'Виробник побутової хімії у Львові',
+  }
+};
 
 export default function AboutUs() {
 
