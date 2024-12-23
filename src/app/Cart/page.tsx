@@ -75,7 +75,11 @@ export default function Cart() {
   
   return (
     <section className={style.cart}>
-      <Contact/>
+      <div className={style.placeholder}>
+        <h2>🚧 У розробці 🚧</h2>
+        <p>Цей розділ буде доступний найближчим часом. <br/><br/>Дякуємо за ваше терпіння!</p>
+      </div>
+      {/* <Contact/> */}
     </section>
   );
 }
