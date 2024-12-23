@@ -15,6 +15,8 @@ interface TypeCard {
   price: number;
   img: string;
   tag: string;
+  capacity: number;
+  unit: string;
 }
 
 const ProductsSection: React.FC = () => {
@@ -108,6 +110,8 @@ const ProductsSection: React.FC = () => {
                       name={card.name}
                       price={card.price}
                       image={card.img}
+                      capacity={card.capacity}
+                      unit={card.unit}
                     />
                   )
                 ))
