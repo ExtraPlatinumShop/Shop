@@ -40,6 +40,7 @@ export default function Header() {
               className={style.logo_image}
               src={logo}
               alt="Picture Logo"
+              loading="lazy"
             ></Image>
           </Link>
           <ul className={style.navigate}>
@@ -51,6 +52,8 @@ export default function Header() {
                     alt="Picture home"
                     width={25}
                     height={25}
+                    loading="lazy"
+                    priority={false}
                   ></Image>
                 }
               </Link>
@@ -93,7 +96,7 @@ export default function Header() {
                 : style.mobile_header
             }
           >
-            <Image src={home} alt="Picture home" width={25} height={25}></Image>
+            <Image src={home} alt="Picture home" width={25} height={25} loading="lazy" priority={false}></Image>
             <div
               onClick={burgerFunction}
               className={
@@ -126,6 +129,8 @@ export default function Header() {
                               alt="Picture home"
                               width={25}
                               height={25}
+                              loading="lazy"
+                              priority={false}
                             ></Image>
                           }
                           {

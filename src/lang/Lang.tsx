@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import style from "./lang.module.scss";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function Lang() {
   const [active, setActive] = useState(false);
@@ -28,7 +29,13 @@ export default function Lang() {
       >
         <div className={`${style.arrow} ${active ? style.arrow_active : ''}`}></div>
         {curentLang}
-        <img src={languages.find((el) => el.name === curentLang)?.imgSrc} alt={curentLang} />
+        <Image 
+          src={languages.find((el) => el.name === curentLang)?.imgSrc || ''}
+          alt={curentLang}
+          width={20}
+          height={15}
+          loading="lazy"
+        />
       </div>
       <ul
         className={
@@ -39,10 +46,16 @@ export default function Lang() {
       >
         {languages.map((el) => [
           el.name !== curentLang ? (
-            <li>
+            <li key={el.locale}>
               <div onClick={() => hendleChange(el)} className={style.lang}>
                 {el.name}
-                <img src={el.imgSrc} alt={el.name} />
+                <Image 
+                  src={el.imgSrc}
+                  alt={el.name}
+                  width={20}
+                  height={15}
+                  loading="lazy"
+                />
               </div>
             </li>
           ) : (
