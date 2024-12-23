@@ -140,6 +140,11 @@
         color: #00ad1c;
         margin-bottom: 25px;
       }
+      p{
+        @media (max-width: 370px) {
+      
+        }
+      }
     }
   }
 }

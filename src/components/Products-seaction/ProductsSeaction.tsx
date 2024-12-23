@@ -74,10 +74,14 @@ const ProductsSection: React.FC = () => {
 
   const filteredData = useMemo(
     () =>
-      finalData.filter((card: TypeCard) =>
-        t(card.name).toLowerCase().includes(dataSearch.toLowerCase())
-      ),
-    [finalData, dataSearch]
+      finalData.filter((card: TypeCard) => {
+        const matchesSearch = t(card.name)
+          .toLowerCase()
+          .includes(dataSearch.toLowerCase());
+        const matchesCategory = dataType === "All" || dataType === card.tag;
+        return matchesSearch && matchesCategory;
+      }),
+    [finalData, dataSearch, dataType, t]
   );
 
   useEffect(() => {
@@ -115,19 +119,16 @@ const ProductsSection: React.FC = () => {
               ) : (
                 filteredData
                   .slice(0, loadCount)
-                  .map(
-                    (card: TypeCard, index: number) =>
-                      (dataType === "All" || dataType === card.tag) && (
-                        <Card
-                          key={index}
-                          name={card.name}
-                          price={card.price}
-                          image={card.img}
-                          capacity={card.capacity}
-                          unit={card.unit}
-                        />
-                      )
-                  )
+                  .map((card: TypeCard, index: number) => (
+                    <Card
+                      key={index}
+                      name={card.name}
+                      price={card.price}
+                      image={card.img}
+                      capacity={card.capacity}
+                      unit={card.unit}
+                    />
+                  ))
               )}
               <div ref={elementRef}></div>
             </div>
