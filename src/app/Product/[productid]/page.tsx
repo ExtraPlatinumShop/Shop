@@ -57,26 +57,28 @@ export default function Page() {
   const [finalData, setFinalData] = useState<TypeCard[]>([]);
 
   useEffect(() => {
-    const fetchData = () => {
-      onValue(ref(db as Database), (snapshot) => {
-        const data = snapshot.val();
-
-        if (data) {
-          const newData = Object.values(data) as TypeCard[];
-          setFinalData(newData);
-        }
-      });
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const snapshot = await onValue(ref(db as Database), (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            const newData = Object.values(data) as TypeCard[];
+            setFinalData(newData);
+            const foundData = newData.find((e) => e.name === currentpath);
+            if (foundData) {
+              setInformation(foundData);
+            }
+          }
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
     };
-    setLoading(false);
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    const foundData = finalData.find((e) => e.name === currentpath);
-    if (foundData) {
-      setInformation(foundData);
-    }
-  }, [finalData, currentpath]);
+  }, [currentpath]);
 
   const translatedName = information ? t(information.name) : "";
   const translatedText = information ? t(information.text) : "";
@@ -109,7 +111,7 @@ export default function Page() {
                   ref={sliderRef}
                   className={style.vertical_swiper}
                   modules={[Navigation]}
-                  spaceBetween={55}
+                  spaceBetween={20}
                   slidesPerView={2}
                 
                   direction="vertical"

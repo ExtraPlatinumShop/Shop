@@ -4,13 +4,14 @@ import { useState } from "react";
 
 export default function Lang() {
   const [active, setActive] = useState(false);
-  const [curentLang, setCurentLang] = useState("UA");
-
   const { t, i18n } = useTranslation();
+
+  const [curentLang, setCurentLang] = useState(i18n.language.toUpperCase());
+
   const languages = [
     { locale: "ua", name: "UA", imgSrc: "/icons/langFlags/ua.png" },
     { locale: "ru", name: "RU", imgSrc: "/icons/langFlags/ru.png" },
-    { locale: "en", name: "ENG", imgSrc: "/icons/langFlags/us.png" },
+    { locale: "en", name: "EN", imgSrc: "/icons/langFlags/us.png" },
   ];
 
   const hendleChange = (e: any) => {
@@ -25,9 +26,9 @@ export default function Lang() {
         onClick={(e) => setActive((prev) => !prev)}
         className={style.ua + " " + style.activeLang}
       >
+        <div className={`${style.arrow} ${active ? style.arrow_active : ''}`}></div>
         {curentLang}
         <img src={languages.find((el) => el.name === curentLang)?.imgSrc} alt={curentLang} />
-
       </div>
       <ul
         className={
@@ -40,6 +41,7 @@ export default function Lang() {
           el.name !== curentLang ? (
             <li>
               <div onClick={() => hendleChange(el)} className={style.lang}>
+                {el.name}
                 <img src={el.imgSrc} alt={el.name} />
               </div>
             </li>

@@ -7,6 +7,8 @@ type Inputs = {
   name: string;
   email: string;
   message: string;
+  phone: string;
+  
 };
 
 export default function CoopForm() {
@@ -15,9 +17,11 @@ export default function CoopForm() {
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = async ({ name, email, message }) => {
-    await sendCoop(name, email, message);
+  const onSubmit: SubmitHandler<Inputs> = async ({ name, email, message, phone }) => {
+    await sendCoop(name, email, message, phone);
+    reset();
   };
 
   
@@ -35,6 +39,11 @@ export default function CoopForm() {
             type="email"
             placeholder={"Enter your e-mail"}
             {...register("email")}
+          />
+           <input
+            type="tel"
+            placeholder={"Enter your phone"}
+            {...register("phone")}
           />
 
           <textarea

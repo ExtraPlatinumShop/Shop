@@ -5,7 +5,7 @@ import "@/lang/i18n";
 import { getDatabase, onValue, ref } from "firebase/database";
 import HomeScreen from "@/components/HomeScreen/HomeScreen";
 
-<link rel="icon" href="/src/app/favicon.ico" sizes="any" />;
+
 
 type Todo = {
   albom: string[];

@@ -18,7 +18,7 @@
   align-items: flex-start;
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 0px 25px;
+    padding: 0px 15px;
   }
 }
 .product_visual {
@@ -69,10 +69,10 @@
 .vertical_prev,
 .vertical_next {
   @media (max-width: 425px) {
-    left: 40px;
+    left: 35px;
   }
   cursor: pointer;
-  left: 85px;
+  left: 45px;
   position: absolute;
   svg {
     transition-duration: 0.3s;
@@ -119,6 +119,7 @@
 .product_info {
   @media (max-width: 768px) {
     margin-left: 0px;
+    width: 100%;
   }
   margin-left: 30px;
 }
@@ -178,6 +179,7 @@
   }
 }
 .btn_to_cart {
+
   font-family: "Montserrat";
   font-size: 20px;
   font-weight: 600;
@@ -210,6 +212,7 @@
   font-weight: 500;
   line-height: 150%;
   transition-duration: 0.3s;
+  
   &.active {
     p {
       max-height: 1800px;
@@ -220,10 +223,11 @@
     }
   }
   p {
-    max-width: 400px;
+    // max-width: 400px;
     max-height: 180px;
     overflow: hidden;
     margin-bottom: 30px;
+    text-align: justify;
   }
   span {
     cursor: pointer;

@@ -23,9 +23,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -48,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/src/app/favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
       </head>
       <body>
        <Header/>

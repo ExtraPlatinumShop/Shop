@@ -1,0 +1,19 @@
+.placeholder {
+  background-color: #f9f9f9; // Світлий фон
+  border: 1px solid #e0e0e0; // Легка рамка
+  border-radius: 8px; // Закруглені кути
+  padding: 20px; // Внутрішні відступи
+  text-align: center; // Центрування тексту
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Легка тінь
+}
+
+.placeholder h2 {
+  color: #27b208; // Колір заголовка
+  margin-bottom: 10px; // Відступ знизу
+}
+
+.placeholder p {
+  color: #555; // Колір тексту
+  font-size: 16px; // Розмір шрифту
+  text-align: center;
+}
