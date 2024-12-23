@@ -13,7 +13,7 @@
       flex-direction: column;
       align-items: center;
       padding: 85px 45px;
-      gap: 45px;
+      gap: 25px;
       input {
         border: 1px solid #989898;
         border-radius: 10px;
@@ -54,7 +54,7 @@
   }
   @media (max-width: 720px) {
     .coop_wrapper {
-      height: 430px;
+      height: 480px;
       max-width: 300px;
 
       width: 100%;

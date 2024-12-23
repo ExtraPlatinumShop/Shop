@@ -17,7 +17,7 @@ export function sendOrder(
   countEachProduct: any
 ) {
   sendMessage(`
- Замовлення\n
+ Замовлення\n\n
   Ім'я: ${name}\n
   Пошта: ${email}\n
   Повідомлення:${message}
@@ -27,10 +27,11 @@ ${products.map((el) => {
 })}
   `);
 }
-export function sendCoop(name: string, email: string, message: string) {
+export function sendCoop(name: string, email: string, message: string, phone: string) {
   sendMessage(`
-  Пропозиція СПІВПРАТЦІ\n
+  Пропозиція СПІВПРАТЦІ\n\n
   Ім'я: ${name}\n
+  Телефон: ${phone}\n
   Пошта: ${email}\n
   Повідомлення:${message}
   `);
