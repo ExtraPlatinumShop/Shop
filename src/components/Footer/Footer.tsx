@@ -17,7 +17,7 @@ export default function Footer() {
       <div className={styles.wrapper}>
         <div className={styles.footer_row}>
           <div className={styles.logo}>
-            <Image src={logo} alt="Picture Logo" width={90} height={90}></Image>
+            <Image src={logo} alt="Picture Logo" width={90} height={90} loading="lazy"></Image>
           </div>
           <ul className={styles.footer_nav}>
             <li>
@@ -27,13 +27,14 @@ export default function Footer() {
                 alt="Picture Catalog"
                 width={20}
                 height={20}
+                loading="lazy"
               ></Image>
             </li>
             <li>
             <Link href="/About-us">{t("Header_About_Us")}</Link>
             </li>
             <li>
-            <Link href="">{t("Header_Basket")}</Link>
+            <Link href="/Cart">{t("Header_Basket")}</Link>
             </li>
             <li>
             <Link href="/Cooperation">{t("Header_Сooperation")}</Link>
