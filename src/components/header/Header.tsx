@@ -97,14 +97,14 @@ export default function Header() {
             <div
               onClick={burgerFunction}
               className={
-                active ? style.burger + " " + style.active : style.burger
+                style.burger
               }
             ></div>
             <div
               onClick={(e ) => closeBurger(e)}
               className={style.burger_content}
             >
-              <div className={style.burger_main}>
+              <div className={active ? style.burger_main + " " + style.active : style.burger_main}>
                 {active ? (
                   <div>
                   
@@ -118,7 +118,7 @@ export default function Header() {
                     ></div>
                     <ul className={style.burger_navigate}>
                       <li>
-                        <Link href="/">
+                        <Link href="/" onClick={() => setActive(false)}>
                           {
                             <Image
                               className={style.picture_home}
@@ -129,23 +129,23 @@ export default function Header() {
                             ></Image>
                           }
                           {
-                            <Link href="/#catalog">
+                            <Link href="/#catalog" onClick={() => setActive(false)}>
                               {t("Home_screen_to_catalog")}{" "}
                             </Link>
                           }
                         </Link>
                       </li>{" "}
                       <li>
-                        <Link href="/">{t("Header_Main_Page")}</Link>
+                        <Link href="/" onClick={() => setActive(false)}>{t("Header_Main_Page")}</Link>
                       </li>
                       <li>
-                        <Link href="/About-us">{t("Header_About_Us")}</Link>
+                        <Link href="/About-us" onClick={() => setActive(false)}>{t("Header_About_Us")}</Link>
                       </li>
                       <li>
-                        <Link href="/Cart">{t("Header_Basket")}</Link>
+                        <Link href="/Cart" onClick={() => setActive(false)}>{t("Header_Basket")}</Link>
                       </li>{" "}
                       <li>
-                        <Link href="/Cooperation">
+                        <Link href="/Cooperation" onClick={() => setActive(false)}>
                           {t("Header_Сooperation")}
                         </Link>
                       </li>

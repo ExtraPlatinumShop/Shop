@@ -109,7 +109,7 @@ export default function Page() {
                   ref={sliderRef}
                   className={style.vertical_swiper}
                   modules={[Navigation]}
-                  spaceBetween={55}
+                  spaceBetween={20}
                   slidesPerView={2}
                 
                   direction="vertical"

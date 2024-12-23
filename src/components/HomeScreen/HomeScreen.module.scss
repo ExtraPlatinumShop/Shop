@@ -5,6 +5,7 @@
   }
   .homeScreen_row {
     @media (max-width: 768px) {
+      overflow: hidden;
       width: 100%;
       background-size: auto;
     }

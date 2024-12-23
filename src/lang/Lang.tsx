@@ -26,9 +26,9 @@ export default function Lang() {
         onClick={(e) => setActive((prev) => !prev)}
         className={style.ua + " " + style.activeLang}
       >
+        <div className={`${style.arrow} ${active ? style.arrow_active : ''}`}></div>
         {curentLang}
         <img src={languages.find((el) => el.name === curentLang)?.imgSrc} alt={curentLang} />
-
       </div>
       <ul
         className={
