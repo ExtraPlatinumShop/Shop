@@ -1,10 +1,4 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-  useMemo,
-} from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import style from "./productsSeaction.module.scss";
 import Filter from "./Filter/Filter";
 import Card from "./Card/Card";
@@ -14,7 +8,7 @@ import { db } from "@/UI/firebase/data";
 import { useTranslation } from "react-i18next";
 import Loading from "@/app/loading";
 import Image from "next/image";
-import water from "@/image/water.png";
+import water from '@/image/water.png';
 
 interface TypeCard {
   name: string;
@@ -51,16 +45,13 @@ const ProductsSection: React.FC = () => {
   }, [fetchData]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        setIsVisible(entries[0].isIntersecting);
-      },
-      {
-        root: null,
-        threshold: 0,
-      }
-    );
-
+    const observer = new IntersectionObserver((entries) => {
+      setIsVisible(entries[0].isIntersecting);
+    }, {
+      root: null,
+      threshold: 0,
+    });
+    
     if (elementRef.current) {
       observer.observe(elementRef.current);
     }
@@ -72,13 +63,10 @@ const ProductsSection: React.FC = () => {
     };
   }, []);
 
-  const filteredData = useMemo(
-    () =>
-      finalData.filter((card: TypeCard) =>
-        t(card.name).toLowerCase().includes(dataSearch.toLowerCase())
-      ),
-    [finalData, dataSearch]
-  );
+  const filteredData = useMemo(() => 
+    finalData.filter((card: TypeCard) =>
+      t(card.name).toLowerCase().includes(dataSearch.toLowerCase())
+    ), [finalData, dataSearch]);
 
   useEffect(() => {
     if (isVisible && loadCount < filteredData.length) {
@@ -91,13 +79,15 @@ const ProductsSection: React.FC = () => {
       <div className={style.wrapper}>
         <div className={style.label_block}>
           <h2 className={style.title}>
-            {t("Product_screen_title_part1")}
-            <span>{t("Product_screen_title_part2")}</span>
-            {t("Product_screen_title_part3")}
+            {t('Product_screen_title_part1')}
+            <span>{t('Product_screen_title_part2')}</span>
+            {t('Product_screen_title_part3')}
           </h2>
-          <p className={style.products_label}>{t("Product_screen_label")}</p>
+          <p className={style.products_label}>
+            {t('Product_screen_label')}
+          </p>
         </div>
-
+       
         <div className={style.products_plate}>
           <Image
             className={style.water_image}
@@ -113,21 +103,18 @@ const ProductsSection: React.FC = () => {
               {loading ? (
                 <Loading />
               ) : (
-                filteredData
-                  .slice(0, loadCount)
-                  .map(
-                    (card: TypeCard, index: number) =>
-                      (dataType === "All" || dataType === card.tag) && (
-                        <Card
-                          key={index}
-                          name={card.name}
-                          price={card.price}
-                          image={card.img}
-                          capacity={card.capacity}
-                          unit={card.unit}
-                        />
-                      )
+                filteredData.slice(0, loadCount).map((card: TypeCard, index: number) => (
+                  (dataType === "All" || dataType === card.tag) && (
+                    <Card
+                      key={index}
+                      name={card.name}
+                      price={card.price}
+                      image={card.img}
+                      capacity={card.capacity}
+                      unit={card.unit}
+                    />
                   )
+                ))
               )}
               <div ref={elementRef}></div>
             </div>
