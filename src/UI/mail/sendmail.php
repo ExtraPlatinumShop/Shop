@@ -5,7 +5,8 @@ if (isset(/* $_POST['name'], */ $_POST['email'], $_POST['message'])) {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $to = 'vovakryt24@gmail.com'; // Ваш адрес электронной почты
+    require_once('../../../constants/contacts.php');
+    $to = COMPANY_CONTACTS['EMAIL']; // Using the constant
     $subject = 'Сообщение с сайта';
     $body = "Имя: \nEmail: $email\nСообщение: $message";
     $headers = 'From: noreply@example.com' . "\r\n" . 'Reply-To: noreply@example.com';

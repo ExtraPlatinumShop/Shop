@@ -2,17 +2,27 @@
   .wrapper {
     max-width: 1400px;
     margin: auto;
+
+    @media (max-width: 725px) {
+      padding: 0px;
+    }
   }
   .homeScreen_row {
-    @media (max-width: 768px) {
-      overflow: hidden;
-      width: 100%;
-      background-size: auto;
-    }
-    @media (max-width: 425px) {
+    // @media (max-width: 768px) {
+    //   overflow: hidden;
+    //   width: 100%;
+    //   // background-size: auto;
+    // }
+ 
+    @media (max-width: 725px) {
       padding:0px 10px;
       background-size: auto 100%;
       background-position: -565px 0;
+
+    }
+    @media (min-width: 550px) and (max-width: 768px) {
+      background-size: auto 100%;
+      background-position: right;
     }
     top: -20px;
     position: relative;
@@ -21,8 +31,9 @@
     background-image: url(../../image/back-main-screen.webp);
     background-repeat: no-repeat;
     background-size: 75% 100%;
+    
     background-position: right;
-
+    padding: 0px 10px;
     .leftProduct {
  
       transition-duration: 0.3s;
@@ -32,7 +43,7 @@
       transform: rotate(-22.76deg);
       height: 350px;
       width: 150px;
-      @media (max-width: 425px) {
+      @media (max-width: 725px) {
         width: 67.77px;
         top: 570px;
         height: 157.227px;
@@ -50,7 +61,7 @@
     .centerProduct {
     
       transition-duration: 0.3s;
-      @media (max-width: 425px) {
+      @media (max-width: 725px) {
         height: 275px;
         width: 120px;
         top: 475px;
@@ -75,7 +86,7 @@
     .rightProduct {
      
       transition-duration: 0.3s;
-      @media (max-width: 425px) {
+      @media (max-width: 725px) {
         height: 185px;
         width: 80px;
         right: 45px;
@@ -105,7 +116,7 @@
       display: none;
     }
     .label {
-      @media (max-width: 425px) {
+      @media (max-width: 725px) {
        padding:0px  10px;
       }
       margin-top: 100px;
@@ -121,7 +132,7 @@
           font-size: 40px;
           width: 400px;
         }
-        @media (max-width: 425px) {
+        @media (max-width: 725px) {
           font-size: 24px;
           margin-bottom: 25px;
           width: 270px;
@@ -147,7 +158,7 @@
           font-size: 16px;
           width: 320px;
         }
-        @media (max-width: 425px) {
+        @media (max-width: 725px) {
           font-size: 12px;
           width: 185px;
           margin-bottom: 25px;
@@ -171,7 +182,7 @@
           top: 25px;
           right: 35px;
         }
-        @media (max-width: 425px) {
+        @media (max-width: 725px) {
           padding: 16px 50px 16px 30px;
           font-size: 12px;
           &::before {

@@ -1,13 +1,12 @@
 "use client"
-import Link from "next/link";
 import React from "react";
 import styles from "./footer.module.scss";
-import logo from "../../image/logo.png";
-import catalog from "../../image/icons/Catalog-White.svg";
 import Image from "next/image";
-
-import "@/lang/i18n";
+import logo from "../../image/Logo.png";
+import catalog from "../../image/icons/Catalog.svg";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { COMPANY_CONTACTS } from "../../constants/contacts";
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
@@ -42,8 +41,8 @@ export default function Footer() {
           </ul>
           <div className={styles.contact_info}>
             <div className={styles.contact}>
-              <a className={styles.telephone} href="tel:+38 (093) 50 78 611">
-                +38 (093) 50 78 611
+              <a className={styles.telephone} href={`tel:${COMPANY_CONTACTS.PHONE}`}>
+                {COMPANY_CONTACTS.PHONE}
               </a>
               <a
                 className={styles.street}
@@ -54,7 +53,7 @@ export default function Footer() {
             </div>
             <div className={styles.graph}>
               <h2>{t('Footer_Work_Schedule')}</h2>
-              <p>{t('Footer_Time')}</p>
+              <p>{t('Footer_Time')} 9:00 — 20:00</p>
             </div>
           </div>
         </div>

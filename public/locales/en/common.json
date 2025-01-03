@@ -41,6 +41,13 @@
   "Stock": "In stock",
   "To_basket": "To cart",
   "Read_more": "Read more...",
+  "Loading_Text": "Loading...",
+
+  "Coop_Form_Name": "Enter your name",
+  "Coop_Form_Email": "Enter your e-mail",
+  "Coop_Form_Phone": "Enter your phone",
+  "Coop_Form_Message": "Type your message",
+  "Coop_Form_Submit": "Send",
 
   "Little_soap_malina": "Liquid cream soap with Raspberry extract",
   "Little_soap_malina_text": "Gentle and refreshing liquid soap for everyday use with a pleasant raspberry aroma. Our unique formula contains a blend of gentle active components that create a rich lather and effectively remove impurities. It includes water, sodium laureth sulfate for lathering, sodium chloride for stable consistency, cocamidopropyl betaine and cocamide DEA for gentle cleansing, citric acid for optimal pH, raspberry-scented perfume for a delightful mood, methylchloroisothiazolinone and methylisothiazolinone for long-lasting freshness, xanthan gum for stabilization, and CI 16255 dye for a vibrant raspberry hue.",
@@ -202,5 +209,10 @@
   "Sigara_text": "Immerse yourself in the atmosphere of masculinity and sophistication with the toilet water 'Sigara.' This unique fragrance is distinguished by pronounced strength and luxury, making every moment special for the modern man. Fragrance notes: 'Sigara' opens with sparkling citrus notes, complemented by sensual chords of exotic flowers in the heart, and concludes with warm and lasting notes of wood and musk. This combination creates a unique bouquet that impresses with its uniqueness. Why choose 'Sigara': Masculinity and style: The 'Sigara' fragrance embodies masculinity and style, adding a unique layer of charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Ideal gift: 'Sigara' is the perfect gift for those who appreciate quality and unmatched style. Allow 'Sigara' to become your refined fragrance that highlights your unparalleled individuality. Order it now and enjoy the unmatched impression of this elite perfume!",
 
   "Mystical_Aura": "Scented water Mystical Aura",
-  "Mystical_Aura_text": "Immerse yourself in a world of enchantment and sophistication with 'Mystical Aura' toilet water. This unique feminine fragrance embodies mystery and elegance, making every moment special. Fragrance notes: 'Mystical Aura' opens with delicate floral notes of jasmine and rose, complemented by sensual vanilla accords in the heart, and concludes with warm and lasting notes of amber and musk. This combination creates a unique bouquet that enchants with its femininity. Why choose 'Mystical Aura': Elegance: The 'Mystical Aura' fragrance embodies femininity and sophistication, adding unique charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Perfect gift: 'Mystical Aura' is the perfect gift for those who appreciate quality and refined style."
+  "Mystical_Aura_text": "Immerse yourself in a world of enchantment and sophistication with 'Mystical Aura' toilet water. This unique feminine fragrance embodies mystery and elegance, making every moment special. Fragrance notes: 'Mystical Aura' opens with delicate floral notes of jasmine and rose, complemented by sensual vanilla accords in the heart, and concludes with warm and lasting notes of amber and musk. This combination creates a unique bouquet that enchants with its femininity. Why choose 'Mystical Aura': Elegance: The 'Mystical Aura' fragrance embodies femininity and sophistication, adding unique charm to your image. Lasting effect: The intensity of the fragrance ensures a lasting effect, giving you a feeling of freshness and comfort throughout the day. Perfect gift: 'Mystical Aura' is the perfect gift for those who appreciate quality and refined style.",
+
+  "CoopInfo_Title": "Cooperation",
+  "CoopInfo_Description": "Leave your contact details and we will get in touch with you!",
+  "CoopInfo_Phone": "Phone:",
+  "CoopInfo_Email": "Email:"
 }
