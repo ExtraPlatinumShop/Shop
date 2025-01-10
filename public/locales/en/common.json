@@ -214,5 +214,8 @@
   "CoopInfo_Title": "Cooperation",
   "CoopInfo_Description": "Leave your contact details and we will get in touch with you!",
   "CoopInfo_Phone": "Phone:",
-  "CoopInfo_Email": "Email:"
+  "CoopInfo_Email": "Email:",
+
+  "Page_not_found": "Page not found",
+  "Return_to_home": "Return to home page"
 }

@@ -214,5 +214,8 @@
   "CoopInfo_Title": "Співпраця",
   "CoopInfo_Description": "Залиште ваші контактні дані і ми з вами зв'яжемося!",
   "CoopInfo_Phone": "Телефон:",
-  "CoopInfo_Email": "Email:"
+  "CoopInfo_Email": "Email:",
+
+  "Page_not_found": "Сторінка не знайдена",
+  "Return_to_home": "Повернутися на головну"
 }

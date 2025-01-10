@@ -216,5 +216,8 @@
   "CoopInfo_Title": "Сотрудничество",
   "CoopInfo_Description": "Оставьте ваши контактные данные и мы с вами свяжемся!",
   "CoopInfo_Phone": "Телефон:",
-  "CoopInfo_Email": "Email:"
+  "CoopInfo_Email": "Email:",
+
+  "Page_not_found": "Страница не найдена",
+  "Return_to_home": "Вернуться на главную"
 }
