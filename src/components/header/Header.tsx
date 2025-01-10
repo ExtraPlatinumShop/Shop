@@ -122,24 +122,20 @@ export default function Header() {
                     ></div>
                     <ul className={style.burger_navigate}>
                       <li>
-                        <Link href="/" onClick={() => setActive(false)}>
-                          {
-                            <Image
-                              className={style.picture_home}
-                              src={home}
-                              alt="Picture home"
-                              width={25}
-                              height={25}
-                              loading="lazy"
-                              priority={false}
-                            ></Image>
-                          }
-                          {
-                            <Link href="/#catalog" onClick={() => setActive(false)}>
-                              {t("Home_screen_to_catalog")}{" "}
-                            </Link>
-                          }
-                        </Link>
+                        <div className={style.home_link} onClick={() => setActive(false)}>
+                          <Image
+                            className={style.picture_home}
+                            src={home}
+                            alt="Picture home"
+                            width={25}
+                            height={25}
+                            loading="lazy"
+                            priority={false}
+                          />
+                          <Link href="/#catalog">
+                            {t("Home_screen_to_catalog")}{" "}
+                          </Link>
+                        </div>
                       </li>{" "}
                       <li>
                         <Link href="/" onClick={() => setActive(false)}>{t("Header_Main_Page")}</Link>
