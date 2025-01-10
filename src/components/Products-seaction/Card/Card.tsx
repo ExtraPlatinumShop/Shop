@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./card.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 import star from "@/image/icons/star.svg";
 import { useTranslation } from "react-i18next";
-import { useRouter } from 'next/navigation'
 
 export default function Card(
   props: {  name: string, image: string, price: number ,capacity:number,unit:string},
 ) {
   const { t } = useTranslation("");
-  const router = useRouter()
+  
   return (
-    <div onClick={() => router.push(`/Product/${props.name}`)} className={style.product_card}>
+    <Link href={`/Product/${props.name}`} className={style.product_card}>
       <div className={style.card_image}>
         <img src={props.image} alt="Product Picture" />
       </div>
@@ -21,11 +21,10 @@ export default function Card(
         <div className={style.add_to_cart}>
           <Image src={star} alt="star"></Image>
         </div>
-
       </div>
       <div className={style.card_capacity}>
         <div className={style.capacity_value}>{props.capacity} {t(`${props.unit}`)}</div>
       </div>
-    </div>
+    </Link>
   );
 }
