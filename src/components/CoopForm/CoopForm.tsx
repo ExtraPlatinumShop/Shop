@@ -2,16 +2,17 @@ import React from "react";
 import style from "./CoopForm.module.scss";
 import { sendCoop } from "@/UI/telegram/telegram";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Inputs = {
   name: string;
   email: string;
   message: string;
   phone: string;
-  
 };
 
 export default function CoopForm() {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -24,37 +25,35 @@ export default function CoopForm() {
     reset();
   };
 
-  
   return (
     <div className={style.CoopForm}>
       <div className={style.coop_wrapper}>
         <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder={"Enter your name"}
+            placeholder={t("Coop_Form_Name")}
             {...register("name")}
           />
 
           <input
             type="email"
-            placeholder={"Enter your e-mail"}
+            placeholder={t("Coop_Form_Email")}
             {...register("email")}
           />
-           <input
+          <input
             type="tel"
-            placeholder={"Enter your phone"}
+            placeholder={t("Coop_Form_Phone")}
             {...register("phone")}
           />
 
           <textarea
-            placeholder={"Type your message"}
+            placeholder={t("Coop_Form_Message")}
             {...register("message")}
-
-            /* onChange={(e) => setMessage(e.target.value)}  */
+            style={{ resize: 'none' }}
           />
 
           <button className={style.submit_btn} type="submit">
-            Відправити
+            {t("Coop_Form_Submit")}
           </button>
         </form>
       </div>

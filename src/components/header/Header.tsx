@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 import style from "./header.module.scss";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +13,7 @@ import "@/lang/i18n";
 import { useTranslation } from "react-i18next";
 import Lang from "@/lang/Lang";
 
-import { useState } from "react";
+import { COMPANY_CONTACTS } from "../../constants/contacts";
 
 export default function Header() {
   const [active, setActive] = useState(false);
@@ -71,8 +72,8 @@ export default function Header() {
               <Link href="/Cooperation">{t("Header_Сooperation")}</Link>
             </li>
             <li>
-              <a className={style.telephone} href="tel:+38 (093) 50 78 611">
-                +38 (093) 50 78 611
+              <a className={style.telephone}href={`tel:${COMPANY_CONTACTS.PHONE}`}>
+              {COMPANY_CONTACTS.PHONE}
               </a>
             </li>
             <li>
@@ -121,24 +122,20 @@ export default function Header() {
                     ></div>
                     <ul className={style.burger_navigate}>
                       <li>
-                        <Link href="/" onClick={() => setActive(false)}>
-                          {
-                            <Image
-                              className={style.picture_home}
-                              src={home}
-                              alt="Picture home"
-                              width={25}
-                              height={25}
-                              loading="lazy"
-                              priority={false}
-                            ></Image>
-                          }
-                          {
-                            <Link href="/#catalog" onClick={() => setActive(false)}>
-                              {t("Home_screen_to_catalog")}{" "}
-                            </Link>
-                          }
-                        </Link>
+                        <div className={style.home_link} onClick={() => setActive(false)}>
+                          <Image
+                            className={style.picture_home}
+                            src={home}
+                            alt="Picture home"
+                            width={25}
+                            height={25}
+                            loading="lazy"
+                            priority={false}
+                          />
+                          <Link href="/#catalog">
+                            {t("Home_screen_to_catalog")}{" "}
+                          </Link>
+                        </div>
                       </li>{" "}
                       <li>
                         <Link href="/" onClick={() => setActive(false)}>{t("Header_Main_Page")}</Link>
@@ -173,9 +170,9 @@ export default function Header() {
                      <span> {t('Header_Contacts')}</span>
                         <a
                           className={style.burger_telephone}
-                          href="tel:+38 (093) 50 78 611"
+                          href={`tel:${COMPANY_CONTACTS.PHONE}`}
                         >
-                          +38 (093) 50 78 611
+                          {COMPANY_CONTACTS.PHONE}
                         </a>
                       </li>
                       {
