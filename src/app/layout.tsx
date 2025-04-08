@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Header from "@/components/header/Header";
-import Footer from "@/components/Footer/Footer";
-import { useTranslation } from "react-i18next";
+import RootClientWrapper from "./components/RootClientWrapper";
 
 export const metadata: Metadata = {
   title: {
@@ -41,18 +39,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
-       <Header/>
-        <section>
-        {children}
-        </section>
-       <Footer/>
+        <RootClientWrapper>
+          {children}
+        </RootClientWrapper>
       </body>
     </html>
   );

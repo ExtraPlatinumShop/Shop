@@ -1,0 +1,22 @@
+.cartPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cartPage h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cartContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cartContent {
+    grid-template-columns: 1fr;
+  }
+} 

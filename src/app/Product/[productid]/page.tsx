@@ -19,6 +19,8 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import Loading from "@/app/loading";
 import NotFound from "@/app/not-found";
+import AddToCartButton from "@/app/components/AddToCartButton";
+
 export interface TypeCard {
   name: string;
   price: number;
@@ -180,7 +182,18 @@ export default function Page() {
                 </div>
               </div>
               <div className={style.stock}>{t('Stock')}</div>
-              <button className={style.btn_to_cart}>{t("To_basket")}</button>
+              {information && (
+                <AddToCartButton
+                  item={{
+                    id: Date.now(),
+                    name: translatedName,
+                    price: Number(information.price),
+                    image: information.img,
+                    weight: parseFloat(information.capacity)
+                  }}
+                  className={style.btn_to_cart}
+                />
+              )}
               <div
                 className={
                   active
