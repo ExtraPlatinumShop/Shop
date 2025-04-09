@@ -8,6 +8,7 @@ import home from "../../image/icons/Catalog.svg";
 
 import Module from "../Module/Module";
 import Cart from "../Cart/Cart";
+import CartCounter from '@/app/components/CartCounter';
 
 import "@/lang/i18n";
 import { useTranslation } from "react-i18next";
@@ -66,8 +67,11 @@ export default function Header() {
               <Link href="/About-us">{t("Header_About_Us")}</Link>
             </li>
             <li>
-              <Link href="/inFeature">{t("Header_Basket")}</Link>
-            </li>{" "}
+              <Link href="/Cart" className={style.cart_link}>
+                {t("Header_Basket")}
+                <CartCounter />
+              </Link>
+            </li>
             <li>
               <Link href="/Cooperation">{t("Header_Сooperation")}</Link>
             </li>
@@ -144,7 +148,10 @@ export default function Header() {
                         <Link href="/About-us" onClick={() => setActive(false)}>{t("Header_About_Us")}</Link>
                       </li>
                       <li>
-                        <Link href="/Cart" onClick={() => setActive(false)}>{t("Header_Basket")}</Link>
+                        <Link href="/Cart" onClick={() => setActive(false)} className={style.cart_link}>
+                          {t("Header_Basket")}
+                          <CartCounter />
+                        </Link>
                       </li>{" "}
                       <li>
                         <Link href="/Cooperation" onClick={() => setActive(false)}>
