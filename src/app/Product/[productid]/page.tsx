@@ -22,6 +22,7 @@ import NotFound from "@/app/not-found";
 import AddToCartButton from "@/app/components/AddToCartButton";
 
 export interface TypeCard {
+  id: string;
   name: string;
   price: number;
   img: string;
@@ -30,6 +31,8 @@ export interface TypeCard {
   albom: string[];
   albomName:string[];
   unit:string;
+  weight: number;
+  quantity: number;
 }
 export default function Page() {
   const [loading, setLoading] = useState(true);
@@ -49,7 +52,7 @@ export default function Page() {
     </svg>
   );
   const pathname = usePathname();
-  const currentpath = pathname.slice(9);
+  const currentpath = pathname ? pathname.slice(9) : '';
 
 
 
@@ -185,11 +188,13 @@ export default function Page() {
               {information && (
                 <AddToCartButton
                   item={{
-                    id: Date.now(),
+                    id: information.name,
                     name: translatedName,
                     price: Number(information.price),
                     image: information.img,
-                    weight: parseFloat(information.capacity)
+                    weight: parseFloat(information.capacity),
+                    unit: information.unit,
+                    capacity: information.capacity
                   }}
                   className={style.btn_to_cart}
                 />
