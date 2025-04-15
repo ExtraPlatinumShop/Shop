@@ -4,9 +4,21 @@ const baseUrl =
   "http://api.telegram.org/bot6855648363:AAFRbWZ5tL_ESAb31ufDnwqHnNGOVzXRCWE/";
 const CHAT_ID = "-1002041235960";
 
-export const sendMessage = async (messege: string): Promise<void> => {
-  const url: string = `${baseUrl}sendMessage?chat_id=${CHAT_ID}&text=${messege}`;
+export const sendMessage = async (message: string): Promise<void> => {
+  const params = new URLSearchParams({
+    chat_id: CHAT_ID,
+    text: message,
+    parse_mode: 'HTML'
+  });
+  
+  const url = `${baseUrl}sendMessage?${params.toString()}`;
   const response = await fetch(url);
+  const data = await response.json();
+  
+  if (!response.ok) {
+    console.error('Помилка при відправці повідомлення в Telegram:', data);
+    throw new Error('Не вдалося відправити повідомлення в Telegram');
+  }
 };
 
 export function sendOrder(
@@ -17,9 +29,10 @@ export function sendOrder(
   countEachProduct: any
 ) {
   sendMessage(`
- Замовлення\n\n
-  Ім'я: ${name}\n
-  Пошта: ${email}\n
+ Замовлення
+
+  Ім'я: ${name}
+  Пошта: ${email}
   Повідомлення:${message}
 ${products.map((el) => {
   el.name;
@@ -29,10 +42,11 @@ ${products.map((el) => {
 }
 export function sendCoop(name: string, email: string, message: string, phone: string) {
   sendMessage(`
-  Пропозиція СПІВПРАТЦІ\n\n
-  Ім'я: ${name}\n
-  Телефон: ${phone}\n
-  Пошта: ${email}\n
+  Пропозиція СПІВПРАТЦІ
+
+  Ім'я: ${name}
+  Телефон: ${phone}
+  Пошта: ${email}
   Повідомлення:${message}
   `);
 }

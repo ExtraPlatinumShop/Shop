@@ -12,6 +12,7 @@
 
 .formGroup {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .formGroup input,
@@ -24,6 +25,13 @@
   font-size: 1rem;
 }
 
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #006400;
+}
+
 .formGroup textarea {
   min-height: 100px;
   resize: vertical;
@@ -32,6 +40,18 @@
 .formGroup select {
   background-color: white;
   cursor: pointer;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.formGroup input:invalid,
+.formGroup select:invalid {
+  border-color: #e53e3e;
 }
 
 .checkboxGroup {
@@ -65,4 +85,71 @@
 
 .submitButton:hover {
   background-color: #005000;
+}
+
+.submitButton:disabled {
+  background-color: #83a583;
+  cursor: not-allowed;
+}
+
+/* Стилі для сторінки успішного замовлення */
+.successMessage {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 4rem;
+  color: #006400;
+  margin-bottom: 1rem;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  background-color: #e6f4e6;
+}
+
+.successMessage h2 {
+  color: #006400;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.successMessage p {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.orderDetails {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.orderDetails h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.orderDetails ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.orderDetails li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.orderDetails li strong {
+  margin-right: 0.5rem;
 } 
