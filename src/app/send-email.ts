@@ -1,4 +1,4 @@
-import { FormData } from "@/app/Cart/page";
+import { FormData } from "@/app/types/form";
 
 
 export function sendEmail(data: FormData) {
