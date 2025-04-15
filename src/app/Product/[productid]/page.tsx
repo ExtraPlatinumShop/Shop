@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import price from "@/image/icons/Price.svg";
 import Image from "next/image";
 import Slider from "@/components/Slider-seaction/Slider";
-import { Swiper, SwiperSlide, SwiperRef} from "swiper/react";
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
@@ -29,8 +29,8 @@ export interface TypeCard {
   text: string;
   capacity: string;
   albom: string[];
-  albomName:string[];
-  unit:string;
+  albomName: string[];
+  unit: string;
   weight: number;
   quantity: number;
 }
@@ -88,7 +88,7 @@ export default function Page() {
   const translatedName = information ? t(information.name) : "";
   const translatedText = information ? t(information.text) : "";
 
-  const sliderRef= useRef<SwiperRef>(null);
+  const sliderRef = useRef<SwiperRef>(null);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -100,9 +100,9 @@ export default function Page() {
     sliderRef.current.swiper.slideNext();
   }, []);
 
-  
+
   return (<>
-  {information ?  <section className={style.product_page}>
+    {information ? <section className={style.product_page}>
       <div className={style.wrapper}>
         <h1 className={style.main_title}>{translatedName}</h1>
         {loading ? (
@@ -111,37 +111,37 @@ export default function Page() {
           <div className={style.product_row}>
             <div className={style.product_visual}>
               <div className={style.slider}>
-                {information.albom[0] !=''?
-                <Swiper
-                  ref={sliderRef}
-                  className={style.vertical_swiper}
-                  modules={[Navigation]}
-                  spaceBetween={20}
-                  slidesPerView={2}
-                
-                  direction="vertical"
-                  navigation={{
-                    prevEl: ".vertical_prev",
-                    nextEl: ".vertical_next",
-                  }}
-                  onSwiper={(swiper) => console.log()}
-                  onSlideChange={() => console.log()}
-                >
-                  {information?.albom.map((image: string, index: number) => (
-                    <SwiperSlide className={style.vertical_slide} key={index +Math.random()}>
-                      <Link href={"/Product/" + information.albomName[index]}>
-                        <img src={image} alt={`Фото ${index + 1}`} />
-                      </Link>
-                    </SwiperSlide>
-                  ))}
-                  <div className={style.vertical_prev} onClick={handlePrev}>
-                    {arrow}
-                  </div>
-                  <div className={style.vertical_next} onClick={handleNext}>
-                    {arrow}
-                  </div>
-                </Swiper>
-              : ''}
+                {information.albom[0] != '' ?
+                  <Swiper
+                    ref={sliderRef}
+                    className={style.vertical_swiper}
+                    modules={[Navigation]}
+                    spaceBetween={20}
+                    slidesPerView={2}
+
+                    direction="vertical"
+                    navigation={{
+                      prevEl: ".vertical_prev",
+                      nextEl: ".vertical_next",
+                    }}
+                    onSwiper={(swiper) => console.log()}
+                    onSlideChange={() => console.log()}
+                  >
+                    {information?.albom.map((image: string, index: number) => (
+                      <SwiperSlide className={style.vertical_slide} key={index + Math.random()}>
+                        <Link href={"/Product/" + information.albomName[index]}>
+                          <img src={image} alt={`Фото ${index + 1}`} />
+                        </Link>
+                      </SwiperSlide>
+                    ))}
+                    <div className={style.vertical_prev} onClick={handlePrev}>
+                      {arrow}
+                    </div>
+                    <div className={style.vertical_next} onClick={handleNext}>
+                      {arrow}
+                    </div>
+                  </Swiper>
+                  : ''}
               </div>
               <div className={style.main_image_slider}>
                 <div className={style.image_slider}>
@@ -212,13 +212,13 @@ export default function Page() {
                     setActive(!active);
                   }}
                 >
-                 {t("Read_more")} 
+                  {t("Read_more")}
                 </span>
               </div>
             </div>
           </div>
         )}
       </div>
-    </section> : <NotFound/>}</>
+    </section> : <NotFound />}</>
   );
 }

@@ -41,7 +41,7 @@ const CartItems: FC = () => {
             </div>
             <div className={styles.itemDetails}>
               <h3>{item.name}</h3>
-              <div className={styles.weightInfo}>Вага: {item.capacity} {t(item.unit)}</div>
+              <div className={styles.weightInfo}>Вміст: {item.capacity} {t(item.unit)}</div>
               <div className={styles.quantityControls}>
                 <button 
                   onClick={() => updateQuantity(item.id, item.quantity - 1)}
