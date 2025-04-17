@@ -1,7 +1,7 @@
 import { TypeCard } from "@/app/Product/[productid]/page";
 
 const baseUrl =
-  "http://api.telegram.org/bot6855648363:AAFRbWZ5tL_ESAb31ufDnwqHnNGOVzXRCWE/";
+  "https://api.telegram.org/bot6855648363:AAFRbWZ5tL_ESAb31ufDnwqHnNGOVzXRCWE/";
 const CHAT_ID = "-1002041235960";
 
 export const sendMessage = async (message: string): Promise<void> => {
