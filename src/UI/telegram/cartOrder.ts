@@ -2,17 +2,17 @@ import { t } from 'i18next';
 import { sendMessage } from './telegram';
 import { TypeCard } from "@/app/Product/[productid]/page";
 
-export type CartOrderData = {
-
+export interface CartOrderData {
   name: string;
   phone: string;
   email: string;
   city: string;
-  delivery: string;
-  payment: string;
+  warehouse: string;
+  delivery: 'nova-poshta' | 'ukr-poshta';
+  payment: 'card' | 'cash';
   comment?: string;
-  noCall: boolean;
-};
+  noCall?: boolean;
+}
 
 export const sendCartOrder = async (data: CartOrderData, products: TypeCard[], countEachProduct: any) => {
   const { name, phone, email, city, delivery, payment, comment, noCall } = data;
