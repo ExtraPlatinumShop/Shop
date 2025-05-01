@@ -34,7 +34,6 @@ export const novaPoshtaService = {
           },
         }),
       });
-      console.log(response);
       const data: NovaPoshtaResponse = await response.json();
       console.log('NovaPoshta API response:', data);
       return data.data[0]?.Addresses || [];
