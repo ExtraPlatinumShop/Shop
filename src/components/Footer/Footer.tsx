@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./footer.module.scss";
 import Image from "next/image";
-import logo from "../../image/Logo.png";
+import logo from "../../image/logo.png";
 import catalog from "../../image/icons/Catalog.svg";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
