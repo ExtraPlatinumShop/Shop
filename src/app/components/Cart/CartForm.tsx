@@ -8,6 +8,8 @@ import { TypeCard } from '@/app/Product/[productid]/page';
 import { useCart } from '../../context/CartContext';
 import { CartItem } from '../../types/cart';
 import { useRouter } from 'next/navigation';
+import NovaPoshtaSelect from './NovaPoshtaSelect';
+import UkrposhtaSelect from './UkrposhtaSelect';
 
 
 const getProductCounts = (products: TypeCard[]): Record<string, number> => {
@@ -36,14 +38,21 @@ const convertToTypeCard = (cartItem: CartItem): TypeCard => {
 const CartForm: FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [orderData, setOrderData] = useState<CartOrderData | null>(null);
+  const [novaPoshtaData, setNovaPoshtaData] = useState({ city: '', warehouse: '' });
+  const [ukrCity, setUkrCity] = useState('');
+  const [ukrWarehouse, setUkrWarehouse] = useState('');
   const router = useRouter();
   
   const { 
     register, 
     handleSubmit, 
     formState: { errors, isSubmitting }, 
-    reset 
+    reset,
+    setValue,
+    watch
   } = useForm<CartOrderData>();
+
+  const deliveryMethod = watch('delivery');
 
   const { items } = useCart();
   const { clearCart } = useCart();
@@ -71,6 +80,24 @@ const CartForm: FC = () => {
       console.error('Помилка при відправці замовлення:', error);
       alert('Сталася помилка при відправці замовлення. Спробуйте ще раз або зв\'яжіться з нами по телефону.');
     }
+  };
+
+  const handleNovaPoshtaSelect = (city: string, warehouse: string) => {
+    setNovaPoshtaData({ city, warehouse });
+    setValue('city', city);
+    setValue('warehouse', warehouse);
+  };
+
+  const handleUkrCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUkrCity(e.target.value);
+    setValue('city', e.target.value);
+    setUkrWarehouse('');
+    setValue('warehouse', '');
+  };
+
+  const handleUkrWarehouseSelect = (office: string) => {
+    setUkrWarehouse(office);
+    setValue('warehouse', office);
   };
 
   if (isSuccess && orderData) {
@@ -152,17 +179,6 @@ const CartForm: FC = () => {
       </div>
 
       <div className={styles.formGroup}>
-        <input
-          type="text"
-          placeholder="Місто/Населений пункт *"
-          {...register("city", { 
-            required: "Це поле обов'язкове" 
-          })}
-        />
-        {errors.city && <span className={styles.error}>{errors.city.message}</span>}
-      </div>
-
-      <div className={styles.formGroup}>
         <select
           {...register("delivery", { 
             required: "Це поле обов'язкове" 
@@ -175,6 +191,39 @@ const CartForm: FC = () => {
         {errors.delivery && <span className={styles.error}>{errors.delivery.message}</span>}
       </div>
 
+      {deliveryMethod === 'nova-poshta' && (
+        <div className={styles.formGroup}>
+          <NovaPoshtaSelect
+            onSelect={handleNovaPoshtaSelect}
+            value={novaPoshtaData}
+          />
+          {errors.warehouse && <span className={styles.error}>{errors.warehouse.message}</span>}
+        </div>
+      )}
+
+      {deliveryMethod === 'ukr-poshta' && (
+        <>
+          <div className={styles.formGroup}>
+            <input
+              type="text"
+              placeholder="Місто/Населений пункт *"
+              value={ukrCity}
+              onChange={handleUkrCityChange}
+              className={styles.input}
+            />
+            {errors.city && <span className={styles.error}>{errors.city.message}</span>}
+          </div>
+          <div className={styles.formGroup}>
+            <UkrposhtaSelect
+              city={ukrCity}
+              onSelect={handleUkrWarehouseSelect}
+              value={ukrWarehouse}
+            />
+            {errors.warehouse && <span className={styles.error}>{errors.warehouse.message}</span>}
+          </div>
+        </>
+      )}
+
       <div className={styles.formGroup}>
         <select
           {...register("payment", { 
@@ -182,7 +231,7 @@ const CartForm: FC = () => {
           })}
         >
           <option value="">Оберіть спосіб оплати *</option>
-          <option value="card">Оплата картою</option>
+          <option value="card">Оплата на карту</option>
           <option value="cash">Оплата при отриманні</option>
         </select>
         {errors.payment && <span className={styles.error}>{errors.payment.message}</span>}
