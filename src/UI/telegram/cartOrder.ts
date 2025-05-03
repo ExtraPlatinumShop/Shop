@@ -15,7 +15,7 @@ export interface CartOrderData {
 }
 
 export const sendCartOrder = async (data: CartOrderData, products: TypeCard[], countEachProduct: any) => {
-  const { name, phone, email, city, delivery, payment, comment, noCall } = data;
+  const { name, phone, email, city, delivery, payment, comment, noCall, warehouse } = data;
   
   // Отримання поточної дати та часу
   const now = new Date();
@@ -50,11 +50,12 @@ export const sendCartOrder = async (data: CartOrderData, products: TypeCard[], c
 • Ім'я: <b>${name}</b>
 • Телефон: <b>${phone}</b>
 • Пошта: <b>${email}</b>
-• Місто: <b>${city}</b>
 • Не телефонувати: <b>${noCall ? 'Так' : 'Ні'}</b>
 
 <b>📦 ДЕТАЛІ ДОСТАВКИ:</b>
 • Спосіб доставки: <b>${deliveryText}</b>
+• Місто: <b>${city}</b>
+• Відділення: <b>${warehouse}</b>
 • Спосіб оплати: <b>${paymentText}</b>
 
 <b>📜 ПЕРЕЛІК ТОВАРІВ:</b>
