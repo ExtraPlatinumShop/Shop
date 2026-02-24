@@ -26,11 +26,7 @@ export const metadata: Metadata = {
     initialScale: 1,
   },
   alternates: {
-    canonical: '/',
-    languages: {
-      'uk-UA': '/ua',
-      'en-US': '/en',
-    },
+    canonical: 'https://extra-platinum.com.ua',
   }
 };
 
@@ -40,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="uk">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>

@@ -1,60 +1,27 @@
-"use client";
-import ProductsSeaction from "@/components/Products-seaction/ProductsSeaction";
-import { useState, useEffect } from "react";
-import "@/lang/i18n";
-import { getDatabase, onValue, ref } from "firebase/database";
-import HomeScreen from "@/components/HomeScreen/HomeScreen";
+import { Metadata } from 'next';
+import HomeClient from './HomeClient';
 
-
-
-type Todo = {
-  albom: string[];
-  albomName: string[];
-  capacity: string;
-  id: number;
-  img: string;
-  name: string;
-  price: string;
-  tag: string;
-  text: string;
-  unit: string;
-  completed: boolean;
+export const metadata: Metadata = {
+  title: 'Extra-Platinum — Побутова хімія від виробника у Львові',
+  description: 'Купуйте якісну побутову хімію від виробника Extra-Platinum у Львові: мило, засоби для посуду, прального порошку, гель для унітазів, кондиціонер та інше. Доступні ціни.',
+  keywords: [
+    'побутова хімія', 'засоби для чищення', 'мило рідке', 'пральний порошок',
+    'засіб для посуду', 'гель для унітазу', 'кондиціонер для білизни',
+    'Extra-Platinum', 'Львів', 'виробник побутової хімії'
+  ],
+  openGraph: {
+    title: 'Extra-Platinum — Побутова хімія від виробника у Львові',
+    description: 'Широкий асортимент якісної побутової хімії від виробника. Мило, засоби для посуду, порошки та інше.',
+    url: 'https://extra-platinum.com.ua',
+    type: 'website',
+    locale: 'uk_UA',
+    siteName: 'Extra-Platinum',
+  },
+  alternates: {
+    canonical: 'https://extra-platinum.com.ua',
+  },
 };
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [isInitialRender, setIsInitialRender] = useState<boolean>(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const database = getDatabase();
-      const dbRef = ref(database);
-  
-      onValue(dbRef, (snapshot) => {
-        const data = snapshot.val();
-
-        if (isInitialRender) {
-          setIsInitialRender(false);
-          setTodos([]);
-        }
-  
-        if (data !== null && data !== 0) {
-          const todosArray: Todo[] = Object.values(data) as Todo[];
-  
-          setTodos((prevTodos) => [...prevTodos, ...todosArray]);
-        }
-      });
-      setLoading(false);
-    };
-  
-    fetchData();
-  }, [isInitialRender, setTodos, setIsInitialRender]);
-  
-  return (
-    <>
-      <HomeScreen />
-      <ProductsSeaction />
-    </>
-);
+  return <HomeClient />;
 }
