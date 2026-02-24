@@ -161,7 +161,7 @@ export default function Header() {
                       <li>
                         <div className={style.graph}>
                           <h2>{t("Footer_Work_Schedule")}</h2>
-                          <p>{t("Footer_Time")}9:00 — 20:00</p>
+                          <p>{t("Footer_Time")}</p>
                         </div>
                       </li>
                       <li>
