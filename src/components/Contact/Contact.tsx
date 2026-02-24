@@ -4,7 +4,7 @@ import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { sendEmail } from "@/app/send-email";
 import { sendOrder } from "@/UI/telegram/telegram";
-import { TypeCard } from "@/app/Product/[productid]/page";
+import { TypeCard } from "@/app/types/product";
 
 export type FormData = {
   name: string;
@@ -17,7 +17,7 @@ type Inputs = {
   email: string;
   message: string;
   products: TypeCard[];
-  countEachProduct:number[]
+  countEachProduct: number[]
 };
 const Contact: FC = () => {
   const {
@@ -33,7 +33,7 @@ const Contact: FC = () => {
     products,
     countEachProduct
   }) => {
-    await sendOrder(name, email, message, products,countEachProduct);
+    await sendOrder(name, email, message, products, countEachProduct);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

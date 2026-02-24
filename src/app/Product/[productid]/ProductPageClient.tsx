@@ -18,20 +18,7 @@ import Link from "next/link";
 import Loading from "@/app/loading";
 import NotFound from "@/app/not-found";
 import AddToCartButton from "@/app/components/AddToCartButton";
-
-export interface TypeCard {
-  id: string;
-  name: string;
-  price: number;
-  img: string;
-  text: string;
-  capacity: string;
-  albom: string[];
-  albomName: string[];
-  unit: string;
-  weight: number;
-  quantity: number;
-}
+import { TypeCard } from "@/app/types/product";
 
 interface Props {
   productid: string;

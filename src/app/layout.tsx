@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.scss";
 import RootClientWrapper from "./components/RootClientWrapper";
+
+// viewport виноситься окремо (вимога Next.js 14.1+)
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -21,13 +27,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   alternates: {
     canonical: 'https://extra-platinum.com.ua',
-  }
+  },
 };
 
 export default function RootLayout({
