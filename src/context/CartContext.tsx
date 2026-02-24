@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { TypeCard } from '@/app/Product/[productid]/page';
+import { TypeCard } from '@/app/types/product';
 
 interface CartContextType {
   cartItems: TypeCard[];

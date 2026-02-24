@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 import { sendMessage } from './telegram';
-import { TypeCard } from "@/app/Product/[productid]/page";
+import { TypeCard } from "@/app/types/product";
 
 export interface CartOrderData {
   name: string;
@@ -16,20 +16,20 @@ export interface CartOrderData {
 
 export const sendCartOrder = async (data: CartOrderData, products: TypeCard[], countEachProduct: any) => {
   const { name, phone, email, city, delivery, payment, comment, noCall, warehouse } = data;
-  
+
   // Отримання поточної дати та часу
   const now = new Date();
   const formattedDate = now.toLocaleString('uk-UA', {
-    year: 'numeric', month: 'long', day: 'numeric', 
+    year: 'numeric', month: 'long', day: 'numeric',
     hour: '2-digit', minute: '2-digit', second: '2-digit'
   });
 
   // Перетворення значень на більш читабельні
   const deliveryText = getDeliveryText(delivery);
   const paymentText = getPaymentText(payment);
-  
+
   let totalPrice = 0;
-  
+
   const productList = products.map((product) => {
     const count = countEachProduct[product.name] || 0;
     const productTotalPrice = product.price * count;
@@ -40,7 +40,7 @@ export const sendCartOrder = async (data: CartOrderData, products: TypeCard[], c
     Всього: <b>${productTotalPrice} ₴</b>
     `;
   }).join('\n');
-  
+
   await sendMessage(`
 <b>🛒 НОВЕ ЗАМОВЛЕННЯ</b>
 ───────────────────────

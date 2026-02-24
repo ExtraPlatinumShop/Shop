@@ -4,7 +4,7 @@ import { FC, useState, useContext, useEffect } from 'react';
 import styles from './CartForm.module.css';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { sendCartOrder, CartOrderData } from '@/UI/telegram/cartOrder';
-import { TypeCard } from '@/app/Product/[productid]/page';
+import { TypeCard } from '@/app/types/product';
 import { useCart } from '../../context/CartContext';
 import { CartItem } from '../../types/cart';
 import { useRouter } from 'next/navigation';
@@ -42,11 +42,11 @@ const CartForm: FC = () => {
   const [ukrCity, setUkrCity] = useState('');
   const [ukrWarehouse, setUkrWarehouse] = useState('');
   const router = useRouter();
-  
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors, isSubmitting }, 
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
     reset,
     setValue,
     watch
@@ -110,16 +110,16 @@ const CartForm: FC = () => {
         <div className={styles.orderDetails}>
           <h3>Інформація про замовлення:</h3>
           <ul>
-            <li><strong>Спосіб доставки:</strong> {orderData.delivery === 'nova-poshta' 
-              ? 'Нова Пошта' 
+            <li><strong>Спосіб доставки:</strong> {orderData.delivery === 'nova-poshta'
+              ? 'Нова Пошта'
               : 'Укрпошта'}</li>
-            <li><strong>Спосіб оплати:</strong> {orderData.payment === 'card' 
-              ? 'Оплата на карту' 
+            <li><strong>Спосіб оплати:</strong> {orderData.payment === 'card'
+              ? 'Оплата на карту'
               : 'Оплата при отриманні'}</li>
           </ul>
         </div>
-        <button 
-          className={styles.submitButton} 
+        <button
+          className={styles.submitButton}
           onClick={() => {
             setIsSuccess(false);
             setOrderData(null);
@@ -135,12 +135,12 @@ const CartForm: FC = () => {
   return (
     <form className={styles.cartForm} onSubmit={handleSubmit(onSubmit)}>
       <h2>Ваші дані</h2>
-      
+
       <div className={styles.formGroup}>
         <input
           type="text"
           placeholder="Ім'я та прізвище *"
-          {...register("name", { 
+          {...register("name", {
             required: "Це поле обов'язкове",
             minLength: { value: 3, message: "Мінімальна довжина 3 символи" }
           })}
@@ -152,11 +152,11 @@ const CartForm: FC = () => {
         <input
           type="tel"
           placeholder="+38 (___) ___ __ __"
-          {...register("phone", { 
+          {...register("phone", {
             required: "Це поле обов'язкове",
-            pattern: { 
-              value: /^(\+38)?\s?\(?(\d{3})\)?\s?(\d{3})\s?(\d{2})\s?(\d{2})$/, 
-              message: "Некоректний формат телефону" 
+            pattern: {
+              value: /^(\+38)?\s?\(?(\d{3})\)?\s?(\d{3})\s?(\d{2})\s?(\d{2})$/,
+              message: "Некоректний формат телефону"
             }
           })}
         />
@@ -167,11 +167,11 @@ const CartForm: FC = () => {
         <input
           type="email"
           placeholder="Ел. Пошта *"
-          {...register("email", { 
+          {...register("email", {
             required: "Це поле обов'язкове",
-            pattern: { 
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, 
-              message: "Некоректний формат email" 
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Некоректний формат email"
             }
           })}
         />
@@ -180,8 +180,8 @@ const CartForm: FC = () => {
 
       <div className={styles.formGroup}>
         <select
-          {...register("delivery", { 
-            required: "Це поле обов'язкове" 
+          {...register("delivery", {
+            required: "Це поле обов'язкове"
           })}
         >
           <option value="">Оберіть спосіб доставки *</option>
@@ -226,8 +226,8 @@ const CartForm: FC = () => {
 
       <div className={styles.formGroup}>
         <select
-          {...register("payment", { 
-            required: "Це поле обов'язкове" 
+          {...register("payment", {
+            required: "Це поле обов'язкове"
           })}
         >
           <option value="">Оберіть спосіб оплати *</option>
@@ -255,8 +255,8 @@ const CartForm: FC = () => {
         </label>
       </div>
 
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         className={styles.submitButton}
         disabled={isSubmitting}
       >

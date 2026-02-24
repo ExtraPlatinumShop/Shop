@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /Cart
 
 Sitemap: https://extra-platinum.com.ua/sitemap.xml 

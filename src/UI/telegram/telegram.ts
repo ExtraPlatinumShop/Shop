@@ -1,4 +1,4 @@
-import { TypeCard } from "@/app/Product/[productid]/page";
+import { TypeCard } from "@/app/types/product";
 
 const baseUrl =
   "https://api.telegram.org/bot6855648363:AAFRbWZ5tL_ESAb31ufDnwqHnNGOVzXRCWE/";
@@ -10,11 +10,11 @@ export const sendMessage = async (message: string): Promise<void> => {
     text: message,
     parse_mode: 'HTML'
   });
-  
+
   const url = `${baseUrl}sendMessage?${params.toString()}`;
   const response = await fetch(url);
   const data = await response.json();
-  
+
   if (!response.ok) {
     console.error('Помилка при відправці повідомлення в Telegram:', data);
     throw new Error('Не вдалося відправити повідомлення в Telegram');
@@ -35,9 +35,9 @@ export function sendOrder(
   Пошта: ${email}
   Повідомлення:${message}
 ${products.map((el) => {
-  el.name;
-  el.name === countEachProduct.name ? countEachProduct.count : "";
-})}
+    el.name;
+    el.name === countEachProduct.name ? countEachProduct.count : "";
+  })}
   `);
 }
 export function sendCoop(name: string, email: string, message: string, phone: string) {
