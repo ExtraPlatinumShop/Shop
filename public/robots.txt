@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://extra-platinum.com.ua.ua/sitemap.xml 
+Sitemap: https://extra-platinum.com.ua/sitemap.xml 
