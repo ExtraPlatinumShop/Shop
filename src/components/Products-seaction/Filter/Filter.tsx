@@ -26,6 +26,8 @@ const Filter: React.FC<FilterProps> = (props) => {
     { type: "conditioner", label: `${t("Filter_Conditioner")}` },
     { type: "bilizna", label: `${t("Filter_Bilizna")}` },
     { type: "parchment", label: `${t("Filter_Parchment")}` },
+    { type: "aluminum_foil", label: `${t("Filter_Aluminum_Foil")}` },
+    { type: "cling_film", label: `${t("Filter_Cling_Film")}` },
   ];
 
   const [open, setOpen] = useState(false);
